@@ -1,0 +1,14 @@
+
+2020Äê1ÔÂ23ÈÕ
+.nice UI eg.HP smart 3D
+debugtime:unused check, assert check, qDebug output.
+runtime:proper log sys
+local ini
+separate logic/UI
+__definitions.h(preprocessor)
+__globalvars.h
+__utilities.h
+localization file 
+interactive 3D scene(including orbit camera ctrl, object picking, moving, scaling, rotating)
+IPC using socket
+version ctrl

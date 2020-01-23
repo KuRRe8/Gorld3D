@@ -23,6 +23,9 @@
       <Extensions>qrc;*</Extensions>
       <ParseFiles>false</ParseFiles>
     </Filter>
+    <Filter Include="Bangin%27 burst">
+      <UniqueIdentifier>{03e692f7-86bf-4b64-825a-fbb5e9f2ffbf}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -46,5 +49,13 @@
     <QtRcc Include="Gorld3D.qrc">
       <Filter>Resource Files</Filter>
     </QtRcc>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Progress.ykw">
+      <Filter>Bangin%27 burst</Filter>
+    </Text>
+    <Text Include="Demands.ykw">
+      <Filter>Bangin%27 burst</Filter>
+    </Text>
   </ItemGroup>
 </Project>

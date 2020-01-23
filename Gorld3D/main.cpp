@@ -3,8 +3,8 @@
 
 int main(int argc, char *argv[])
 {
-	QApplication a(argc, argv);
+	QApplication protogonus(argc, argv);
 	Gorld3D w;
 	w.show();
-	return a.exec();
+	return protogonus.exec();
 }
