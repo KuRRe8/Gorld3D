@@ -26,19 +26,55 @@
     <Filter Include="Bangin%27 burst">
       <UniqueIdentifier>{03e692f7-86bf-4b64-825a-fbb5e9f2ffbf}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\windows">
+      <UniqueIdentifier>{649ec2f1-b86b-4c52-a778-b957d322d267}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\sockets">
+      <UniqueIdentifier>{03795a36-e4be-41a2-b6e7-c10153734cc6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\__">
+      <UniqueIdentifier>{c310bc30-0712-4407-8a3f-cb33695430f9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\windows">
+      <UniqueIdentifier>{9b1f0a51-feab-4dfd-8511-589d486f2799}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\sockets">
+      <UniqueIdentifier>{eaaaeba0-0d82-4824-943e-d6e444666ada}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\3rdparty">
+      <UniqueIdentifier>{ddd43b7f-ecc9-45cc-96a2-c1ac13b6f0cc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\3rdparty">
+      <UniqueIdentifier>{876202f4-bbda-4ec0-a6ec-ecaa61aa79b9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Translation Files">
+      <UniqueIdentifier>{639EADAA-A684-42e4-A9AD-28FC9BCB8F7C}</UniqueIdentifier>
+      <Extensions>ts</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Gorld3D.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\windows</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <QtMoc Include="Gorld3D.h">
-      <Filter>Header Files</Filter>
-    </QtMoc>
+    <ClCompile Include="3rdparty\elog.cpp">
+      <Filter>Source Files\3rdparty</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdparty\elog_async.cpp">
+      <Filter>Source Files\3rdparty</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdparty\elog_buf.cpp">
+      <Filter>Source Files\3rdparty</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdparty\elog_port.cpp">
+      <Filter>Source Files\3rdparty</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdparty\elog_utils.cpp">
+      <Filter>Source Files\3rdparty</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="Gorld3D.ui">
@@ -57,5 +93,40 @@
     <Text Include="Demands.ykw">
       <Filter>Bangin%27 burst</Filter>
     </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="__Definitions.h">
+      <Filter>Header Files\__</Filter>
+    </ClInclude>
+    <ClInclude Include="__GlobalVars.h">
+      <Filter>Header Files\__</Filter>
+    </ClInclude>
+    <ClInclude Include="__Utilities.h">
+      <Filter>Header Files\__</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files\__</Filter>
+    </ClInclude>
+    <ClInclude Include="3rdparty\elog.h">
+      <Filter>Header Files\3rdparty</Filter>
+    </ClInclude>
+    <ClInclude Include="3rdparty\elog_cfg.h">
+      <Filter>Header Files\3rdparty</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="exe.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="Gorld3D.h">
+      <Filter>Header Files\windows</Filter>
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="gorld3d_zh.ts">
+      <Filter>Translation Files</Filter>
+    </None>
   </ItemGroup>
 </Project>

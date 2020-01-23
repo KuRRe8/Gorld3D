@@ -12,3 +12,4 @@ localization file
 interactive 3D scene(including orbit camera ctrl, object picking, moving, scaling, rotating)
 IPC using socket
 version ctrl
+splash window
