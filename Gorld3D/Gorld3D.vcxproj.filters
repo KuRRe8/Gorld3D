@@ -75,6 +75,9 @@
     <ClCompile Include="3rdparty\elog_utils.cpp">
       <Filter>Source Files\3rdparty</Filter>
     </ClCompile>
+    <ClCompile Include="Splash.cpp">
+      <Filter>Source Files\windows</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="Gorld3D.ui">
@@ -113,6 +116,9 @@
     <ClInclude Include="3rdparty\elog_cfg.h">
       <Filter>Header Files\3rdparty</Filter>
     </ClInclude>
+    <ClInclude Include="Splash.h">
+      <Filter>Header Files\windows</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="exe.rc">
@@ -128,5 +134,10 @@
     <None Include="gorld3d_zh.ts">
       <Filter>Translation Files</Filter>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="G3D.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

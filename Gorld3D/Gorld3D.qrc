@@ -1,4 +1,5 @@
 <RCC>
-    <qresource prefix="Gorld3D">
+    <qresource prefix="/">
+        <file>image/splash.png</file>
     </qresource>
 </RCC>

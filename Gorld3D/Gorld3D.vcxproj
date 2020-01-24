@@ -80,9 +80,9 @@
       <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
     </ClCompile>
     <Link>
-      <SubSystem>Windows</SubSystem>
       <OutputFile>$(OutDir)\$(ProjectName).exe</OutputFile>
       <GenerateDebugInformation>false</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -93,6 +93,7 @@
     <ClCompile Include="3rdparty\elog_utils.cpp" />
     <ClCompile Include="Gorld3D.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Splash.cpp" />
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="Gorld3D.h" />
@@ -111,6 +112,7 @@
     <ClInclude Include="3rdparty\elog.h" />
     <ClInclude Include="3rdparty\elog_cfg.h" />
     <ClInclude Include="resource.h" />
+    <ClInclude Include="Splash.h" />
     <ClInclude Include="__Utilities.h" />
     <ClInclude Include="__GlobalVars.h" />
     <ClInclude Include="__Definitions.h" />
@@ -124,6 +126,9 @@
     <None Include="gorld3d_zh.ts">
       <FileType>Document</FileType>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="G3D.ico" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

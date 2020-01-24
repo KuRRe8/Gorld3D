@@ -5,11 +5,11 @@ debugtime:unused check, assert check, qDebug output.
 runtime:proper log sys
 local ini
 separate logic/UI
-__definitions.h(preprocessor)
+__definitions.h(preprocessor)																	¡Ì
 __globalvars.h
-__utilities.h
-localization file 
+__utilities.h																					¡Ì
+localization file																				¡Ì
 interactive 3D scene(including orbit camera ctrl, object picking, moving, scaling, rotating)
 IPC using socket
-version ctrl
-splash window
+version ctrl																					¡Ì
+splash window																					¡Ì

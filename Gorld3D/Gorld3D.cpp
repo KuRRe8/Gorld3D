@@ -9,5 +9,6 @@ Gorld3D::Gorld3D(QWidget *parent)
 Gorld3D::~Gorld3D()
 {
 	logger_tag = "Gorld3D";
-	log_i("instance exit");
+	log_i("instance exiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiit\n\n");
+	
 }

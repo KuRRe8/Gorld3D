@@ -5,11 +5,12 @@ char* logger_tag = "      ";
 
 UCHAR load_ini()
 {
-	;
+	return 0;
 }
 
 int main(int argc, char *argv[])
 {
+	int ret_chk;
 
 	QTextCodec::setCodecForLocale(QTextCodec::codecForName("System"));
 	setbuf(stdout, NULL);
@@ -30,8 +31,17 @@ int main(int argc, char *argv[])
 	QTextCodec::setCodecForLocale(QTextCodec::codecForName("UTF-8"));
 
 	QApplication protogonus(argc, argv);
-	protogonus.setFont(QFont("simsun", 10));
+	protogonus.setFont(QFont("simsun", 20));
 
+	QPixmap pmp;
+	ret_chk = pmp.load(":/image/splash.png");
+	QSplashScreen splash(pmp);
+	splash.show();
+	QString qs;
+	qs = ("     Gorld3D Print     v0.0.1");
+	
+	splash.showMessage(qs, Qt::AlignLeft | Qt::AlignVCenter | Qt::AlignJustify, Qt::black);
+	protogonus.processEvents();
 	QTranslator *translator = new QTranslator();
 	bool loadFlag = translator->load("Gorld3D_zh.qm", ".");
 	if (loadFlag == true) {
@@ -70,9 +80,19 @@ int main(int argc, char *argv[])
 			return 1;
 		}
 	}
+	
+	//get screen size
+	QScreen *screen = QGuiApplication::primaryScreen();
+	QRect mm = screen->availableGeometry();
+	qint32 screen_width = mm.width();
+	qint32 screen_height = mm.height();
 
 	Gorld3D w;
+	w.resize(screen_width*0.7, screen_height*0.8);
 	w.show();
+
+	protogonus.setFont(QFont("simsun", 10));
+	splash.finish(&w);
 
 	GetLocalTime(&st);
 	log_i("app initiated at %4d/%2d/%2d %2d:%2d:%2d.%3d", st.wYear, st.wMonth, st.wDay, st.wHour, st.wMinute, st.wSecond, st.wMilliseconds);

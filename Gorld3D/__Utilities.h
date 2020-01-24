@@ -9,4 +9,5 @@ Also including most popular qxxxx.h
 #include "3rdparty\elog.h"
 #include "qtextcodec.h"
 #include "qtranslator.h"
+#include "qscreen.h"
 #include <Windows.h>

@@ -1,7 +1,10 @@
 #pragma once
-
+/*
+main window of app. 
+*/
 #include "__Utilities.h"
 #include <QtWidgets/QMainWindow>
+#include <qsplashscreen.h>
 #include "ui_Gorld3D.h"
 
 class Gorld3D : public QMainWindow
