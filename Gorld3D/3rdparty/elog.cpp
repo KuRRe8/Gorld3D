@@ -197,9 +197,15 @@ void elog_start(void) {
 #elif defined(ELOG_BUF_OUTPUT_ENABLE)
     elog_buf_enabled(true);
 #endif
+	//ykw modified below
+#define NO_LOG_HEADER
+#ifndef NO_LOG_HEADER
 
     /* show version */
     log_i("EasyLogger V%s is initialize success.", ELOG_SW_VERSION);
+
+#endif // !NO_LOG_HEADER
+
 }
 
 /**

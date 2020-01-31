@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
+ <author>KW Y</author>
  <class>Gorld3DClass</class>
  <widget class="QMainWindow" name="Gorld3DClass">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1344</width>
-    <height>864</height>
+    <width>1200</width>
+    <height>800</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
-    <width>800</width>
-    <height>600</height>
+    <width>1200</width>
+    <height>800</height>
    </size>
   </property>
   <property name="mouseTracking">
@@ -22,18 +23,272 @@
   <property name="windowTitle">
    <string>Gorld3D</string>
   </property>
-  <widget class="QWidget" name="centralWidget"/>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>C:/Users/hp/.designer/backup/G3D.ico</normaloff>C:/Users/hp/.designer/backup/G3D.ico</iconset>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QVBoxLayout" name="verticalLayout_3">
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_1">
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_1_1">
+        <item>
+         <widget class="QPushButton" name="pushButton_1_1_1_connect">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>100</width>
+            <height>72</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>100</width>
+            <height>72</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>Connect</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton_1_1_2_add">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>100</width>
+            <height>72</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>100</width>
+            <height>72</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>Add Component</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="Line" name="line">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton_1_1_3_slice">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>100</width>
+            <height>72</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>100</width>
+            <height>72</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>Slice</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton_1_1_4_pending">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>100</width>
+            <height>72</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>100</width>
+            <height>72</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>pending</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_1_1">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_1_2">
+        <item>
+         <widget class="QLabel" name="label_1_2_1_timer">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>200</width>
+            <height>72</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>200</width>
+            <height>72</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <family>Arial</family>
+            <pointsize>20</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>      estimated
+       00:00:00</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton_1_2_2_send">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>100</width>
+            <height>72</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>100</width>
+            <height>72</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>Send</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <item>
+       <widget class="QWidget" name="widget_2_1_3DviewContainer" native="true"/>
+      </item>
+      <item>
+       <widget class="QStackedWidget" name="stackedWidget">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>350</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>350</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="currentIndex">
+         <number>1</number>
+        </property>
+        <widget class="QWidget" name="page_5"/>
+        <widget class="QWidget" name="page_6"/>
+       </widget>
+      </item>
+      <item>
+       <widget class="QListWidget" name="listWidget">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>62</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>62</width>
+          <height>16777215</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1344</width>
-     <height>40</height>
+     <width>1200</width>
+     <height>21</height>
     </rect>
    </property>
    <property name="sizePolicy">
-    <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+    <sizepolicy hsizetype="MinimumExpanding" vsizetype="Minimum">
      <horstretch>0</horstretch>
      <verstretch>0</verstretch>
     </sizepolicy>
@@ -41,13 +296,13 @@
    <property name="minimumSize">
     <size>
      <width>255</width>
-     <height>40</height>
+     <height>21</height>
     </size>
    </property>
    <property name="maximumSize">
     <size>
      <width>16777215</width>
-     <height>40</height>
+     <height>21</height>
     </size>
    </property>
    <property name="layoutDirection">
@@ -72,7 +327,7 @@
      </font>
     </property>
     <property name="title">
-     <string>FILE</string>
+     <string>&amp;FILE</string>
     </property>
     <addaction name="actionNew_2"/>
     <addaction name="actionOpen"/>
@@ -88,7 +343,7 @@
    </widget>
    <widget class="QMenu" name="menuEDIT">
     <property name="title">
-     <string>EDIT</string>
+     <string>&amp;EDIT</string>
     </property>
     <addaction name="actionUndo"/>
     <addaction name="actionRedo"/>
@@ -103,7 +358,7 @@
    </widget>
    <widget class="QMenu" name="menuVIEW">
     <property name="title">
-     <string>VIEW</string>
+     <string>&amp;VIEW</string>
     </property>
     <addaction name="actionAdapt_All"/>
     <addaction name="actionAdapt_Selection"/>
@@ -136,98 +391,101 @@
      </size>
     </property>
     <property name="title">
-     <string>HELP</string>
+     <string>&amp;HELP</string>
     </property>
     <addaction name="actionAbout"/>
     <addaction name="actionManual"/>
+    <addaction name="actiontest_btn"/>
    </widget>
    <addaction name="menuFiles"/>
    <addaction name="menuEDIT"/>
    <addaction name="menuVIEW"/>
    <addaction name="menuHELP"/>
   </widget>
-  <widget class="QToolBar" name="mainToolBar">
-   <attribute name="toolBarArea">
-    <enum>TopToolBarArea</enum>
-   </attribute>
-   <attribute name="toolBarBreak">
-    <bool>false</bool>
-   </attribute>
-  </widget>
   <widget class="QStatusBar" name="statusBar"/>
-  <action name="actionNew">
-   <property name="text">
-    <string>New..</string>
-   </property>
-  </action>
   <action name="actionNew_2">
    <property name="text">
-    <string>New</string>
+    <string>&amp;New</string>
+   </property>
+   <property name="shortcut">
+    <string>Alt+N</string>
    </property>
   </action>
   <action name="actionOpen">
    <property name="text">
-    <string>Open..</string>
+    <string>&amp;Open..</string>
+   </property>
+   <property name="shortcut">
+    <string>Alt+O</string>
    </property>
   </action>
   <action name="actionSave">
    <property name="text">
-    <string>Save</string>
+    <string>&amp;Save</string>
+   </property>
+   <property name="shortcut">
+    <string>Alt+S</string>
    </property>
   </action>
   <action name="actionSave_As">
    <property name="text">
-    <string>Save As..</string>
+    <string>Save &amp;As..</string>
    </property>
   </action>
   <action name="actionAdd_Components">
    <property name="text">
-    <string>Add Components</string>
+    <string>Add &amp;Components</string>
+   </property>
+   <property name="shortcut">
+    <string>Alt+D</string>
    </property>
   </action>
   <action name="actionSlice">
    <property name="text">
-    <string>Slice</string>
+    <string>Sl&amp;ice</string>
    </property>
   </action>
   <action name="actionPrint">
    <property name="text">
-    <string>Print</string>
+    <string>&amp;Print</string>
+   </property>
+   <property name="shortcut">
+    <string>Alt+P</string>
    </property>
   </action>
   <action name="actionExit">
    <property name="text">
-    <string>Exit</string>
+    <string>&amp;Exit</string>
    </property>
   </action>
   <action name="actionUndo">
    <property name="text">
-    <string>Undo</string>
+    <string>&amp;Undo</string>
    </property>
   </action>
   <action name="actionRedo">
    <property name="text">
-    <string>Redo</string>
+    <string>&amp;Redo</string>
    </property>
   </action>
   <action name="actionDuplicate">
    <property name="text">
-    <string>Duplicate</string>
+    <string>&amp;Duplicate</string>
    </property>
   </action>
   <action name="actionMulti_Dup">
    <property name="text">
-    <string>Multi-Dup</string>
+    <string>&amp;Multi-Dup</string>
    </property>
   </action>
   <action name="actionSettings">
    <property name="text">
-    <string>Settings</string>
+    <string>&amp;Settings</string>
    </property>
   </action>
   <action name="actionSelect_All">
    <property name="text">
-    <string>Select All</string>
+    <string>Select &amp;All</string>
    </property>
   </action>
   <action name="actionSelect_Out_Range_Grid">
@@ -247,12 +505,15 @@
   </action>
   <action name="actionAbout">
    <property name="text">
-    <string>About</string>
+    <string>&amp;About</string>
    </property>
   </action>
   <action name="actionManual">
    <property name="text">
-    <string>Manual</string>
+    <string>&amp;Manual</string>
+   </property>
+   <property name="shortcut">
+    <string>F1</string>
    </property>
   </action>
   <action name="actionMain">
@@ -290,10 +551,40 @@
     <string>Back</string>
    </property>
   </action>
+  <action name="actionConnect">
+   <property name="text">
+    <string>Connect</string>
+   </property>
+   <property name="toolTip">
+    <string>Connect to a 3Dprinter</string>
+   </property>
+  </action>
+  <action name="actiontest_btn">
+   <property name="text">
+    <string>&amp;test btn</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources>
   <include location="Gorld3D.qrc"/>
  </resources>
- <connections/>
+ <connections>
+  <connection>
+   <sender>actionExit</sender>
+   <signal>triggered()</signal>
+   <receiver>Gorld3DClass</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>599</x>
+     <y>399</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

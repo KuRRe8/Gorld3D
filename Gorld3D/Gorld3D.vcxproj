@@ -86,6 +86,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Scene3d.cpp" />
     <ClCompile Include="3rdparty\elog.cpp" />
     <ClCompile Include="3rdparty\elog_async.cpp" />
     <ClCompile Include="3rdparty\elog_buf.cpp" />
@@ -93,25 +94,35 @@
     <ClCompile Include="3rdparty\elog_utils.cpp" />
     <ClCompile Include="Gorld3D.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="SettingDlg.cpp" />
     <ClCompile Include="Splash.cpp" />
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="Gorld3D.h" />
   </ItemGroup>
   <ItemGroup>
-    <QtUic Include="Gorld3D.ui" />
+    <QtUic Include="Gorld3D.ui">
+      <SubType>Designer</SubType>
+    </QtUic>
+    <QtUic Include="SettingDlg.ui">
+      <SubType>Designer</SubType>
+    </QtUic>
   </ItemGroup>
   <ItemGroup>
-    <QtRcc Include="Gorld3D.qrc" />
+    <QtRcc Include="Gorld3D.qrc">
+      <SubType>Designer</SubType>
+    </QtRcc>
   </ItemGroup>
   <ItemGroup>
     <Text Include="Progress.ykw" />
     <Text Include="Demands.ykw" />
   </ItemGroup>
   <ItemGroup>
+    <QtMoc Include="Scene3d.h" />
     <ClInclude Include="3rdparty\elog.h" />
     <ClInclude Include="3rdparty\elog_cfg.h" />
     <ClInclude Include="resource.h" />
+    <QtMoc Include="SettingDlg.h" />
     <ClInclude Include="Splash.h" />
     <ClInclude Include="__Utilities.h" />
     <ClInclude Include="__GlobalVars.h" />

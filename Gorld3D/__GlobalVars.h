@@ -8,4 +8,4 @@ You should NOT #include this file directly, #include __Utilities.h instead.
 
 #pragma once
 #include "__Definitions.h"
-extern char* logger_tag;
+extern char* logger_tag;//deprecated but not obsolete

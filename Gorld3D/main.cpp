@@ -38,7 +38,7 @@ int main(int argc, char *argv[])
 	QSplashScreen splash(pmp);
 	splash.show();
 	QString qs;
-	qs = ("     Gorld3D Print     v0.0.1");
+	qs = ("     Gorld3D Print     v0.0.2");
 	
 	splash.showMessage(qs, Qt::AlignLeft | Qt::AlignVCenter | Qt::AlignJustify, Qt::black);
 	protogonus.processEvents();
@@ -76,7 +76,7 @@ int main(int argc, char *argv[])
 		if (GetLastError() == ERROR_ALREADY_EXISTS)
 		{
 			QMessageBox::critical(qApp->activeWindow(), QObject::tr("Run simultaneously prohibited"), QObject::tr("Only one instance can be run at a time!"));
-			log_e("forbidden new instance.");
+			log_e("forbidden multiple instances.");
 			return 1;
 		}
 	}

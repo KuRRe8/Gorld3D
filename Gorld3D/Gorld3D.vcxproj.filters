@@ -78,9 +78,18 @@
     <ClCompile Include="Splash.cpp">
       <Filter>Source Files\windows</Filter>
     </ClCompile>
+    <ClCompile Include="Scene3d.cpp">
+      <Filter>Source Files\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="SettingDlg.cpp">
+      <Filter>Source Files\windows</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="Gorld3D.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="SettingDlg.ui">
       <Filter>Form Files</Filter>
     </QtUic>
   </ItemGroup>
@@ -127,6 +136,12 @@
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="Gorld3D.h">
+      <Filter>Header Files\windows</Filter>
+    </QtMoc>
+    <QtMoc Include="Scene3d.h">
+      <Filter>Header Files\windows</Filter>
+    </QtMoc>
+    <QtMoc Include="SettingDlg.h">
       <Filter>Header Files\windows</Filter>
     </QtMoc>
   </ItemGroup>

@@ -1,3 +1,7 @@
 version log
 v0.01 2020年1月23日
 1. framework
+
+v0.02 2020年1月29日
+1. add 3d view and its container
+2. bug : window not exposed

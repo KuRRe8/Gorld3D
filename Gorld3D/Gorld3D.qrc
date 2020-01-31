@@ -1,5 +1,6 @@
 <RCC>
     <qresource prefix="/">
         <file>image/splash.png</file>
+        <file>G3D.ico</file>
     </qresource>
 </RCC>

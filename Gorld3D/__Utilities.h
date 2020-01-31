@@ -10,4 +10,6 @@ Also including most popular qxxxx.h
 #include "qtextcodec.h"
 #include "qtranslator.h"
 #include "qscreen.h"
+#include <qstringliteral.h>	//accelerate runtime processing, convert const char* 2 QString at compiletime
+#include <QWidget>
 #include <Windows.h>
