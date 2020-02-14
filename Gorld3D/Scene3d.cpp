@@ -1,6 +1,6 @@
 #include "Scene3d.h"
 
-Scene3d::Scene3d(QStackedLayout* parent)
+Scene3d::Scene3d(QLayout* parent)
 {
 	UI_Construction(parent);
 	Retranslate();
@@ -17,13 +17,13 @@ bool Scene3d::LoadFromURL(QUrl *)
 	return false;
 }
 
-void Scene3d::UI_Construction(QStackedLayout* parent)
+void Scene3d::UI_Construction(QLayout* parent)
 {
 	Q_ASSERT(parent != Q_NULLPTR);//_debug runtime availability check
 
 								  //3D view and its container
 	view = new Qt3DExtras::Qt3DWindow();
-	view->defaultFrameGraph()->setClearColor(QColor(QRgb(0xf5f5f5)));//grey intention
+	view->defaultFrameGraph()->setClearColor(QColor(QRgb(0xf7f7f7)));//grey intention
 
 
 	widget_2_1_1_1 = QWidget::createWindowContainer(view);
@@ -80,7 +80,8 @@ void Scene3d::UI_Construction(QStackedLayout* parent)
 	///m_importMesh = new Qt3DRender::QMesh(m_importEntity);
 
 	m_importSceneLoader = new Qt3DRender::QSceneLoader(m_importEntity);
-	QUrl importobjectURL("file:///D:\\0work\\cpp\\3dp_cpp_opengl\\myQt3D\\myQt3D\\nanosuit.obj");
+	//QUrl importobjectURL("file:///D:\\0work\\cpp\\3dp_cpp_opengl\\myQt3D\\myQt3D\\nanosuit.obj");
+	QUrl importobjectURL("file:///D:\\0work\\modal\\pikachu\\pikaqiu.obj");
 	QString st = importobjectURL.toString();
 	st = importobjectURL.fileName();
 	////connect(m_importSceneLoader, SIGNAL(sourceChanged(QUrl & importobjectURL)), this, SLOT(receiveSourceChanged(QUrl & source)));

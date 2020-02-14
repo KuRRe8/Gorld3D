@@ -1,16 +1,30 @@
 #include "Gorld3D.h"
-#include <QtWidgets/QApplication>
 
 char* logger_tag = "      ";
 
+void crtsignalHandler(int signum)
+{
+	std::fprintf(stderr,"signalHandler catched SIG%d", signum);
+#ifdef _DEBUG
+	while (true)
+	{
+		register auto __declspec(deprecated) a = static_cast<size_t> (0);
+	}
+#endif // _DEBUG
+	exit(signum);
+}
+
 UCHAR load_ini()
 {
-	return 0;
+	return static_cast<UCHAR> (0);
 }
 
 int main(int argc, char *argv[])
 {
+	signal(SIGSEGV, crtsignalHandler);
 	int ret_chk;
+	SYSTEMTIME st;
+	GetLocalTime(&st);
 
 	QTextCodec::setCodecForLocale(QTextCodec::codecForName("System"));
 	setbuf(stdout, NULL);
@@ -25,8 +39,6 @@ int main(int argc, char *argv[])
 	elog_set_fmt(ELOG_LVL_VERBOSE, ELOG_FMT_ALL & ~ELOG_FMT_FUNC);
 	/* start EasyLogger */
 	elog_start();
-	SYSTEMTIME st;
-	GetLocalTime(&st);
 	log_i("app initiating at %4d/%2d/%2d %2d:%2d:%2d.%3d", st.wYear, st.wMonth, st.wDay, st.wHour, st.wMinute, st.wSecond, st.wMilliseconds);
 	QTextCodec::setCodecForLocale(QTextCodec::codecForName("UTF-8"));
 
@@ -96,5 +108,6 @@ int main(int argc, char *argv[])
 
 	GetLocalTime(&st);
 	log_i("app initiated at %4d/%2d/%2d %2d:%2d:%2d.%3d", st.wYear, st.wMonth, st.wDay, st.wHour, st.wMinute, st.wSecond, st.wMilliseconds);
+	log_i("    ");
 	return protogonus.exec();
 }

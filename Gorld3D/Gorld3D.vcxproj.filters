@@ -84,12 +84,21 @@
     <ClCompile Include="SettingDlg.cpp">
       <Filter>Source Files\windows</Filter>
     </ClCompile>
+    <ClCompile Include="workspaceinfo.cpp">
+      <Filter>Source Files\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="TransparentAndTools.cpp">
+      <Filter>Source Files\windows</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="Gorld3D.ui">
       <Filter>Form Files</Filter>
     </QtUic>
     <QtUic Include="SettingDlg.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="workspaceinfo.ui">
       <Filter>Form Files</Filter>
     </QtUic>
   </ItemGroup>
@@ -128,6 +137,9 @@
     <ClInclude Include="Splash.h">
       <Filter>Header Files\windows</Filter>
     </ClInclude>
+    <ClInclude Include="TransparentAndTools.h">
+      <Filter>Header Files\windows</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="exe.rc">
@@ -142,6 +154,9 @@
       <Filter>Header Files\windows</Filter>
     </QtMoc>
     <QtMoc Include="SettingDlg.h">
+      <Filter>Header Files\windows</Filter>
+    </QtMoc>
+    <QtMoc Include="workspaceinfo.h">
       <Filter>Header Files\windows</Filter>
     </QtMoc>
   </ItemGroup>

@@ -3,13 +3,13 @@
 main window of app. 
 */
 #include "__Utilities.h"
-#include <QtWidgets/QMainWindow>
 #include <qsplashscreen.h>
 #include "qstackedlayout.h"
 #include "Scene3d.h"
 #include "SettingDlg.h"
 #include "qfiledialog.h"
-
+#include "TransparentAndTools.h"
+#include "workspaceinfo.h"
 #include "ui_Gorld3D.h"
 
 class Gorld3D : public QMainWindow
@@ -27,6 +27,9 @@ private:
 	void Connection_Arrangement();
 	Scene3d* s3d;
 	SettingDlg* settingDlg;
+	TransparentAndTools* transparentandtools;
+	workspaceinfo* workinfotab;
+	
 signals:
 	;
 

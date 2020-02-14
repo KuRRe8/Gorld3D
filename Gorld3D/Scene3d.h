@@ -55,14 +55,14 @@ class Scene3d : public QObject
 {
 	Q_OBJECT
 public:
-	explicit Scene3d(QStackedLayout* parent);
+	explicit Scene3d(QLayout* parent);
 	virtual ~Scene3d();
 
 	//static QLayout* pContainerLayout;
 	//static void setContainerLayout(QLayout* parent);
 	bool LoadFromURL(QUrl*);
 private:
-	void UI_Construction(QStackedLayout* parent);
+	void UI_Construction(QLayout* parent);
 	void Retranslate();
 	void Connection_Arrangement();
 

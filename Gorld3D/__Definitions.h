@@ -7,7 +7,8 @@ You should NOT #include this file directly, #include __Utilities.h instead.
 
 #pragma once
 
-#define G3D_INTERNAL_VERSION "0.02"
+#define G3D_INTERNAL_VERSION "0.03"s //update VER in Progress.ykw, __Definitions.h & exe.rc simultaneously
+#define Y_CONCATENATE(q,w) q##w
 #define ykw_debug
 #define NO_LOG
 //#define QT_NO_DEBUG_OUTPUT

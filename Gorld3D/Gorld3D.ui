@@ -53,8 +53,25 @@
             <height>72</height>
            </size>
           </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton
+{border-style: none; background-color: rgb(240, 240, 240)}
+QPushButton:hover{background-color:rgb(229,241,251);color: grey;}
+QPushButton:pressed{background-color:rgba(85, 170, 255,200); border-style: inset; }
+</string>
+          </property>
           <property name="text">
-           <string>Connect</string>
+           <string/>
+          </property>
+          <property name="icon">
+           <iconset resource="Gorld3D.qrc">
+            <normaloff>:/icons/connect_str.png</normaloff>:/icons/connect_str.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>80</width>
+            <height>72</height>
+           </size>
           </property>
          </widget>
         </item>
@@ -78,15 +95,25 @@
             <height>72</height>
            </size>
           </property>
-          <property name="text">
-           <string>Add Component</string>
+          <property name="styleSheet">
+           <string notr="true">QPushButton
+{border-style: none; background-color: rgb(240, 240, 240)}
+QPushButton:hover{background-color:rgb(229,241,251);color: grey;}
+QPushButton:pressed{background-color:rgba(85, 170, 255,200); border-style: inset; }
+</string>
           </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="Line" name="line">
-          <property name="orientation">
-           <enum>Qt::Vertical</enum>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="icon">
+           <iconset resource="Gorld3D.qrc">
+            <normaloff>:/icons/add_str.png</normaloff>:/icons/add_str.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>80</width>
+            <height>72</height>
+           </size>
           </property>
          </widget>
         </item>
@@ -110,13 +137,30 @@
             <height>72</height>
            </size>
           </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton
+{border-style: none; background-color: rgb(240, 240, 240)}
+QPushButton:hover{background-color:rgb(229,241,251);color: grey;}
+QPushButton:pressed{background-color:rgba(85, 170, 255,200); border-style: inset; }
+</string>
+          </property>
           <property name="text">
-           <string>Slice</string>
+           <string/>
+          </property>
+          <property name="icon">
+           <iconset resource="Gorld3D.qrc">
+            <normaloff>:/icons/slice_str.png</normaloff>:/icons/slice_str.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>80</width>
+            <height>72</height>
+           </size>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="QPushButton" name="pushButton_1_1_4_pending">
+         <widget class="QPushButton" name="pushButton_1_1_4_settings">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
             <horstretch>0</horstretch>
@@ -135,8 +179,103 @@
             <height>72</height>
            </size>
           </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton
+{border-style: none; background-color: rgb(240, 240, 240)}
+QPushButton:hover{background-color:rgb(229,241,251);color: grey;}
+QPushButton:pressed{background-color:rgba(85, 170, 255,200); border-style: inset; }
+</string>
+          </property>
           <property name="text">
-           <string>pending</string>
+           <string/>
+          </property>
+          <property name="icon">
+           <iconset resource="Gorld3D.qrc">
+            <normaloff>:/icons/settings_str.png</normaloff>:/icons/settings_str.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>80</width>
+            <height>72</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton_1_1_5_snapshot">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>100</width>
+            <height>72</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>100</width>
+            <height>72</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton
+{border-style: none; background-color: rgb(240, 240, 240)}
+QPushButton:hover{background-color:rgb(229,241,251);color: grey;}
+QPushButton:pressed{background-color:rgba(85, 170, 255,200); border-style: inset; }
+</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="icon">
+           <iconset resource="Gorld3D.qrc">
+            <normaloff>:/icons/snapshot_str.png</normaloff>:/icons/snapshot_str.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>80</width>
+            <height>72</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton_1_1_6_logfile">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>100</width>
+            <height>72</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton
+{border-style: none; background-color: rgb(240, 240, 240)}
+QPushButton:hover{background-color:rgb(229,241,251);color: grey;}
+QPushButton:pressed{background-color:rgba(85, 170, 255,200); border-style: inset; }
+</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="icon">
+           <iconset resource="Gorld3D.qrc">
+            <normaloff>:/icons/logfile_str.png</normaloff>:/icons/logfile_str.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>80</width>
+            <height>72</height>
+           </size>
           </property>
          </widget>
         </item>
@@ -177,6 +316,43 @@
             <height>72</height>
            </size>
           </property>
+          <property name="palette">
+           <palette>
+            <active>
+             <colorrole role="WindowText">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>13</red>
+                <green>0</green>
+                <blue>199</blue>
+               </color>
+              </brush>
+             </colorrole>
+            </active>
+            <inactive>
+             <colorrole role="WindowText">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>13</red>
+                <green>0</green>
+                <blue>199</blue>
+               </color>
+              </brush>
+             </colorrole>
+            </inactive>
+            <disabled>
+             <colorrole role="WindowText">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>120</red>
+                <green>120</green>
+                <blue>120</blue>
+               </color>
+              </brush>
+             </colorrole>
+            </disabled>
+           </palette>
+          </property>
           <property name="font">
            <font>
             <family>Arial</family>
@@ -211,8 +387,25 @@
             <height>72</height>
            </size>
           </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton
+{border-style: none; background-color: rgb(240, 240, 240)}
+QPushButton:hover{background-color:rgb(229,241,251);color: grey;}
+QPushButton:pressed{background-color:rgba(85, 170, 255,200); border-style: inset; }
+</string>
+          </property>
           <property name="text">
-           <string>Send</string>
+           <string/>
+          </property>
+          <property name="icon">
+           <iconset resource="Gorld3D.qrc">
+            <normaloff>:/icons/send_str.png</normaloff>:/icons/send_str.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>80</width>
+            <height>72</height>
+           </size>
           </property>
          </widget>
         </item>
@@ -223,7 +416,26 @@
     <item>
      <layout class="QHBoxLayout" name="horizontalLayout_2">
       <item>
-       <widget class="QWidget" name="widget_2_1_3DviewContainer" native="true"/>
+       <widget class="QWidget" name="widget_2_1_3DviewContainer" native="true">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>16777215</height>
+         </size>
+        </property>
+       </widget>
       </item>
       <item>
        <widget class="QStackedWidget" name="stackedWidget">
@@ -253,9 +465,9 @@
        </widget>
       </item>
       <item>
-       <widget class="QListWidget" name="listWidget">
+       <widget class="QWidget" name="widget_2_2_infobuttoncontainer" native="true">
         <property name="sizePolicy">
-         <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
+         <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
           <horstretch>0</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
@@ -272,6 +484,87 @@
           <height>16777215</height>
          </size>
         </property>
+        <widget class="QPushButton" name="jobinfo_pushButton">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>62</width>
+           <height>62</height>
+          </rect>
+         </property>
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>icons/window/jobinfo_icon_unactivated.png</normaloff>icons/window/jobinfo_icon_unactivated.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>61</width>
+           <height>61</height>
+          </size>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="components_pushButton">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>62</y>
+           <width>62</width>
+           <height>62</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>icons/window/components_icon_unactivated.png</normaloff>icons/window/components_icon_unactivated.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>62</width>
+           <height>62</height>
+          </size>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="brightness_pushButton">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>124</y>
+           <width>62</width>
+           <height>62</height>
+          </rect>
+         </property>
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>icons/window/brightness_icon_unactivated.png</normaloff>icons/window/brightness_icon_unactivated.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>62</width>
+           <height>62</height>
+          </size>
+         </property>
+        </widget>
        </widget>
       </item>
      </layout>
@@ -284,7 +577,7 @@
      <x>0</x>
      <y>0</y>
      <width>1200</width>
-     <height>21</height>
+     <height>30</height>
     </rect>
    </property>
    <property name="sizePolicy">
@@ -296,19 +589,345 @@
    <property name="minimumSize">
     <size>
      <width>255</width>
-     <height>21</height>
+     <height>30</height>
     </size>
    </property>
    <property name="maximumSize">
     <size>
      <width>16777215</width>
-     <height>21</height>
+     <height>30</height>
     </size>
+   </property>
+   <property name="palette">
+    <palette>
+     <active>
+      <colorrole role="WindowText">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>220</red>
+         <green>220</green>
+         <blue>220</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Button">
+       <brush brushstyle="LinearGradientPattern">
+        <gradient startx="0.000000000000000" starty="0.000000000000000" endx="0.000000000000000" endy="1.000000000000000" type="LinearGradient" spread="PadSpread" coordinatemode="ObjectBoundingMode">
+         <gradientstop position="0.000000000000000">
+          <color alpha="255">
+           <red>211</red>
+           <green>211</green>
+           <blue>211</blue>
+          </color>
+         </gradientstop>
+         <gradientstop position="1.000000000000000">
+          <color alpha="255">
+           <red>169</red>
+           <green>169</green>
+           <blue>169</blue>
+          </color>
+         </gradientstop>
+        </gradient>
+       </brush>
+      </colorrole>
+      <colorrole role="Text">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>220</red>
+         <green>220</green>
+         <blue>220</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="ButtonText">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>220</red>
+         <green>220</green>
+         <blue>220</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Base">
+       <brush brushstyle="LinearGradientPattern">
+        <gradient startx="0.000000000000000" starty="0.000000000000000" endx="0.000000000000000" endy="1.000000000000000" type="LinearGradient" spread="PadSpread" coordinatemode="ObjectBoundingMode">
+         <gradientstop position="0.000000000000000">
+          <color alpha="255">
+           <red>211</red>
+           <green>211</green>
+           <blue>211</blue>
+          </color>
+         </gradientstop>
+         <gradientstop position="1.000000000000000">
+          <color alpha="255">
+           <red>169</red>
+           <green>169</green>
+           <blue>169</blue>
+          </color>
+         </gradientstop>
+        </gradient>
+       </brush>
+      </colorrole>
+      <colorrole role="Window">
+       <brush brushstyle="LinearGradientPattern">
+        <gradient startx="0.000000000000000" starty="0.000000000000000" endx="0.000000000000000" endy="1.000000000000000" type="LinearGradient" spread="PadSpread" coordinatemode="ObjectBoundingMode">
+         <gradientstop position="0.000000000000000">
+          <color alpha="255">
+           <red>211</red>
+           <green>211</green>
+           <blue>211</blue>
+          </color>
+         </gradientstop>
+         <gradientstop position="1.000000000000000">
+          <color alpha="255">
+           <red>169</red>
+           <green>169</green>
+           <blue>169</blue>
+          </color>
+         </gradientstop>
+        </gradient>
+       </brush>
+      </colorrole>
+      <colorrole role="PlaceholderText">
+       <brush brushstyle="NoBrush">
+        <color alpha="128">
+         <red>220</red>
+         <green>220</green>
+         <blue>220</blue>
+        </color>
+       </brush>
+      </colorrole>
+     </active>
+     <inactive>
+      <colorrole role="WindowText">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>220</red>
+         <green>220</green>
+         <blue>220</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Button">
+       <brush brushstyle="LinearGradientPattern">
+        <gradient startx="0.000000000000000" starty="0.000000000000000" endx="0.000000000000000" endy="1.000000000000000" type="LinearGradient" spread="PadSpread" coordinatemode="ObjectBoundingMode">
+         <gradientstop position="0.000000000000000">
+          <color alpha="255">
+           <red>211</red>
+           <green>211</green>
+           <blue>211</blue>
+          </color>
+         </gradientstop>
+         <gradientstop position="1.000000000000000">
+          <color alpha="255">
+           <red>169</red>
+           <green>169</green>
+           <blue>169</blue>
+          </color>
+         </gradientstop>
+        </gradient>
+       </brush>
+      </colorrole>
+      <colorrole role="Text">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>220</red>
+         <green>220</green>
+         <blue>220</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="ButtonText">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>220</red>
+         <green>220</green>
+         <blue>220</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Base">
+       <brush brushstyle="LinearGradientPattern">
+        <gradient startx="0.000000000000000" starty="0.000000000000000" endx="0.000000000000000" endy="1.000000000000000" type="LinearGradient" spread="PadSpread" coordinatemode="ObjectBoundingMode">
+         <gradientstop position="0.000000000000000">
+          <color alpha="255">
+           <red>211</red>
+           <green>211</green>
+           <blue>211</blue>
+          </color>
+         </gradientstop>
+         <gradientstop position="1.000000000000000">
+          <color alpha="255">
+           <red>169</red>
+           <green>169</green>
+           <blue>169</blue>
+          </color>
+         </gradientstop>
+        </gradient>
+       </brush>
+      </colorrole>
+      <colorrole role="Window">
+       <brush brushstyle="LinearGradientPattern">
+        <gradient startx="0.000000000000000" starty="0.000000000000000" endx="0.000000000000000" endy="1.000000000000000" type="LinearGradient" spread="PadSpread" coordinatemode="ObjectBoundingMode">
+         <gradientstop position="0.000000000000000">
+          <color alpha="255">
+           <red>211</red>
+           <green>211</green>
+           <blue>211</blue>
+          </color>
+         </gradientstop>
+         <gradientstop position="1.000000000000000">
+          <color alpha="255">
+           <red>169</red>
+           <green>169</green>
+           <blue>169</blue>
+          </color>
+         </gradientstop>
+        </gradient>
+       </brush>
+      </colorrole>
+      <colorrole role="PlaceholderText">
+       <brush brushstyle="NoBrush">
+        <color alpha="128">
+         <red>220</red>
+         <green>220</green>
+         <blue>220</blue>
+        </color>
+       </brush>
+      </colorrole>
+     </inactive>
+     <disabled>
+      <colorrole role="WindowText">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>220</red>
+         <green>220</green>
+         <blue>220</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Button">
+       <brush brushstyle="LinearGradientPattern">
+        <gradient startx="0.000000000000000" starty="0.000000000000000" endx="0.000000000000000" endy="1.000000000000000" type="LinearGradient" spread="PadSpread" coordinatemode="ObjectBoundingMode">
+         <gradientstop position="0.000000000000000">
+          <color alpha="255">
+           <red>211</red>
+           <green>211</green>
+           <blue>211</blue>
+          </color>
+         </gradientstop>
+         <gradientstop position="1.000000000000000">
+          <color alpha="255">
+           <red>169</red>
+           <green>169</green>
+           <blue>169</blue>
+          </color>
+         </gradientstop>
+        </gradient>
+       </brush>
+      </colorrole>
+      <colorrole role="Text">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>220</red>
+         <green>220</green>
+         <blue>220</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="ButtonText">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>220</red>
+         <green>220</green>
+         <blue>220</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Base">
+       <brush brushstyle="LinearGradientPattern">
+        <gradient startx="0.000000000000000" starty="0.000000000000000" endx="0.000000000000000" endy="1.000000000000000" type="LinearGradient" spread="PadSpread" coordinatemode="ObjectBoundingMode">
+         <gradientstop position="0.000000000000000">
+          <color alpha="255">
+           <red>211</red>
+           <green>211</green>
+           <blue>211</blue>
+          </color>
+         </gradientstop>
+         <gradientstop position="1.000000000000000">
+          <color alpha="255">
+           <red>169</red>
+           <green>169</green>
+           <blue>169</blue>
+          </color>
+         </gradientstop>
+        </gradient>
+       </brush>
+      </colorrole>
+      <colorrole role="Window">
+       <brush brushstyle="LinearGradientPattern">
+        <gradient startx="0.000000000000000" starty="0.000000000000000" endx="0.000000000000000" endy="1.000000000000000" type="LinearGradient" spread="PadSpread" coordinatemode="ObjectBoundingMode">
+         <gradientstop position="0.000000000000000">
+          <color alpha="255">
+           <red>211</red>
+           <green>211</green>
+           <blue>211</blue>
+          </color>
+         </gradientstop>
+         <gradientstop position="1.000000000000000">
+          <color alpha="255">
+           <red>169</red>
+           <green>169</green>
+           <blue>169</blue>
+          </color>
+         </gradientstop>
+        </gradient>
+       </brush>
+      </colorrole>
+      <colorrole role="PlaceholderText">
+       <brush brushstyle="NoBrush">
+        <color alpha="128">
+         <red>220</red>
+         <green>220</green>
+         <blue>220</blue>
+        </color>
+       </brush>
+      </colorrole>
+     </disabled>
+    </palette>
    </property>
    <property name="layoutDirection">
     <enum>Qt::LeftToRight</enum>
    </property>
+   <property name="styleSheet">
+    <string notr="true">QMenuBar {
+	background-color:qlineargradient(x1:0, y1:0, x2:0, y2:1,stop:0 lightgray, stop:1 darkgray);
+	color:rgb(220,220,220);
+}
+
+QMenuBar::item {
+	/* 条目之间的距离 */
+	spacing:10px;
+	
+	/* 条目内边框 */
+	padding:1 20px;
+	
+	/* 背景颜色 */
+	background:transparent;
+	
+	/* 倒角 */
+	border-radius:4px;
+}</string>
+   </property>
    <widget class="QMenu" name="menuFiles">
+    <property name="geometry">
+     <rect>
+      <x>269</x>
+      <y>124</y>
+      <width>188</width>
+      <height>183</height>
+     </rect>
+    </property>
     <property name="minimumSize">
      <size>
       <width>0</width>
@@ -325,6 +944,27 @@
      <font>
       <pointsize>9</pointsize>
      </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"> QMenu {
+background-color:rgb(200,200,200); /*整个背景*/
+/*border: 3px solid rgb(235,110,36);/*整个菜单边缘*/
+}
+QMenu::item{
+font-size: 16pt;
+color: rgb(225,225,225);  /*字体颜色*/
+/*border: 3px solid rgb(60,60,60);    /*item选框*/
+background-color:rgb(180,180,180);
+/*padding:16px 16px; /*设置菜单项文字上下和左右的内边距，效果就是菜单中的条目左右上下有了间隔*/
+/*margin:2px 2px;/*设置菜单项的外边距*/
+}
+QMenu::item:selected {
+background-color:rgb(235,110,36);/*选中的样式*/
+}
+ QMenu::item:pressed {/*菜单项按下效果*/
+border: 1px solid rgb(60,60,61);
+ background-color: rgb(220,80,6);
+}</string>
     </property>
     <property name="title">
      <string>&amp;FILE</string>

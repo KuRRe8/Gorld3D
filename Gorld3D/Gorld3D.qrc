@@ -1,6 +1,13 @@
 <RCC>
-    <qresource prefix="/">
-        <file>image/splash.png</file>
-        <file>G3D.ico</file>
-    </qresource>
+  <qresource prefix="/">
+    <file>icons/send_str.png</file>
+    <file>image/splash.png</file>
+    <file>G3D.ico</file>
+    <file>icons/add_str.png</file>
+    <file>icons/connect_str.png</file>
+    <file>icons/logfile_str.png</file>
+    <file>icons/settings_str.png</file>
+    <file>icons/slice_str.png</file>
+    <file>icons/snapshot_str.png</file>
+  </qresource>
 </RCC>

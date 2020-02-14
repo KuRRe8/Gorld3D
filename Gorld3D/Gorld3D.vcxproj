@@ -96,6 +96,8 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="SettingDlg.cpp" />
     <ClCompile Include="Splash.cpp" />
+    <ClCompile Include="TransparentAndTools.cpp" />
+    <ClCompile Include="workspaceinfo.cpp" />
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="Gorld3D.h" />
@@ -107,6 +109,7 @@
     <QtUic Include="SettingDlg.ui">
       <SubType>Designer</SubType>
     </QtUic>
+    <QtUic Include="workspaceinfo.ui" />
   </ItemGroup>
   <ItemGroup>
     <QtRcc Include="Gorld3D.qrc">
@@ -124,6 +127,8 @@
     <ClInclude Include="resource.h" />
     <QtMoc Include="SettingDlg.h" />
     <ClInclude Include="Splash.h" />
+    <ClInclude Include="TransparentAndTools.h" />
+    <QtMoc Include="workspaceinfo.h" />
     <ClInclude Include="__Utilities.h" />
     <ClInclude Include="__GlobalVars.h" />
     <ClInclude Include="__Definitions.h" />
