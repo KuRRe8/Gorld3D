@@ -1,6 +1,6 @@
 #include "Gorld3D.h"
 
-char* logger_tag = "      ";
+char *logger_tag = "     ";
 
 void crtsignalHandler(int signum)
 {
@@ -8,7 +8,9 @@ void crtsignalHandler(int signum)
 #ifdef _DEBUG
 	while (true)
 	{
-		register auto __declspec(deprecated) a = static_cast<size_t> (0);
+		typedef int(*A) (char32_t, float);
+		register auto __declspec(deprecated)  B = reinterpret_cast<wchar_t*> (0);
+		void* __vectorcall C();
 	}
 #endif // _DEBUG
 	exit(signum);
@@ -19,7 +21,7 @@ UCHAR load_ini()
 	return static_cast<UCHAR> (0);
 }
 
-int main(int argc, char *argv[])
+int APIENTRY main(int argc, char *argv[])
 {
 	signal(SIGSEGV, crtsignalHandler);
 	int ret_chk;

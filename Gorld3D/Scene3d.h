@@ -8,6 +8,7 @@ implementation of 3D view. under QStackedLayout* stackedlayout_2_1_1_
 #include <Qt3DCore/qentity.h>
 #include <Qt3DCore/qtransform.h>
 #include <Qt3DExtras/QPhongMaterial>
+#include <Qt3DExtras/qphongalphamaterial.h>
 #include <Qt3DRender/QMesh> 
 #include <Qt3DRender/qsceneloader.h>
 #include <Qt3DRender/qobjectpicker.h>
@@ -81,14 +82,8 @@ private:
 
 signals:
 	;
-private slots:
+public slots:
 	void slot_entered_picker();
+	bool slot_test();
 
 };
-
-//QLayout* Scene3d::pContainerLayout = Q_NULLPTR;
-//
-//FORCEINLINE void Scene3d::setContainerLayout(QLayout* parent)
-//{
-//	pContainerLayout = parent;
-//}

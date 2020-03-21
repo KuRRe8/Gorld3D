@@ -25,13 +25,12 @@ void Gorld3D::UI_Construction()
 
 	ui.stackedWidget->removeWidget(ui.page_5);
 	ui.stackedWidget->removeWidget(ui.page_6);// in .ui I just cant make a null stackedwidget
-
+	infobuttoncontainer_index = 1; //default to jobinfo tab, ui.stackedWidget->setCurrentIndex(infobuttoncontainer_index - 1)
 	workinfotab = new workspaceinfo(this);
 	ui.stackedWidget->addWidget(workinfotab);
-	ui.stackedWidget->setCurrentIndex(0);
-	int a = ui.stackedWidget->currentIndex();
-
+	ui.stackedWidget->setCurrentIndex(infobuttoncontainer_index - 1);
 	
+
 }
 
 void Gorld3D::Retranslate()
@@ -65,4 +64,125 @@ void Gorld3D::on_actionAdd_Components_triggered()
 
 void Gorld3D::on_actiontest_btn_triggered()
 {
+	s3d->slot_test();
+}
+
+void Gorld3D::on_pushButton_1_1_4_settings_released()
+{
+	settingDlg->show();
+}
+
+void Gorld3D::on_jobinfo_pushButton_released()
+{
+	if (infobuttoncontainer_index == 1)
+	{
+		ui.jobinfo_pushButton->setStyleSheet(QString::fromUtf8("QPushButton{background-color:rgb(240,240,240);\n"
+			"color: white;\n"
+			"/*border-radius:10px;\n"
+			"border: 2px groove gray;*/\n"
+			"border-style: outset;}\n"
+			"QPushButton:hover{background-color:rgb(229,241,251);\n"
+			"color: black;}\n"
+			"QPushButton:pressed{background-color:rgb(119, 185, 252);}\n"
+			""));
+		infobuttoncontainer_index = 0;
+		ui.stackedWidget->hide();
+	}
+	else
+	{
+		ui.jobinfo_pushButton->setStyleSheet(QString::fromUtf8("QPushButton{background-color:rgb(119, 185, 252);\n"
+			"color: white;\n"
+			"/*border-radius:10px;\n"
+			"border: 2px groove gray;*/\n"
+			"border-style: outset;}\n"
+			"QPushButton:hover{background-color:rgb(119, 185, 252);\n"
+			"color: black;}\n"
+			"QPushButton:pressed{background-color:rgb(119, 185, 252);}\n"
+			""));
+		quint8 last_infobuttoncontainer_index = infobuttoncontainer_index;
+		infobuttoncontainer_index = 1;
+		ui.stackedWidget->setCurrentIndex(infobuttoncontainer_index - 1);
+		if (last_infobuttoncontainer_index == 0)
+		{
+			ui.stackedWidget->show();
+		}
+	}
+}
+
+void Gorld3D::on_components_pushButton_released()
+{
+	if (infobuttoncontainer_index == 2)
+	{
+		ui.components_pushButton->setStyleSheet(QString::fromUtf8("QPushButton{background-color:rgb(240,240,240);\n"
+			"color: white;\n"
+			"/*border-radius:10px;\n"
+			"border: 2px groove gray;*/\n"
+			"border-style: outset;}\n"
+			"QPushButton:hover{background-color:rgb(229,241,251);\n"
+			"color: black;}\n"
+			"QPushButton:pressed{background-color:rgb(119, 185, 252);}\n"
+			""));
+		infobuttoncontainer_index = 0;
+		ui.stackedWidget->hide();
+	}
+	else
+	{
+		ui.components_pushButton->setStyleSheet(QString::fromUtf8("QPushButton{background-color:rgb(119, 185, 252);\n"
+			"color: white;\n"
+			"/*border-radius:10px;\n"
+			"border: 2px groove gray;*/\n"
+			"border-style: outset;}\n"
+			"QPushButton:hover{background-color:rgb(119, 185, 252);\n"
+			"color: black;}\n"
+			"QPushButton:pressed{background-color:rgb(119, 185, 252);}\n"
+			""));
+		quint8 last_infobuttoncontainer_index = infobuttoncontainer_index;
+		infobuttoncontainer_index = 2;
+		ui.stackedWidget->setCurrentIndex(infobuttoncontainer_index - 1);
+		if (last_infobuttoncontainer_index == 0)
+		{
+			ui.stackedWidget->show();
+		}
+	}
+}
+
+void Gorld3D::on_scenesetting_pushButton_released()
+{
+	if (infobuttoncontainer_index == 3)
+	{
+		ui.scenesetting_pushButton->setStyleSheet(QString::fromUtf8("QPushButton{background-color:rgb(240,240,240);\n"
+			"color: white;\n"
+			"/*border-radius:10px;\n"
+			"border: 2px groove gray;*/\n"
+			"border-style: outset;}\n"
+			"QPushButton:hover{background-color:rgb(229,241,251);\n"
+			"color: black;}\n"
+			"QPushButton:pressed{background-color:rgb(119, 185, 252);}\n"
+			""));
+		infobuttoncontainer_index = 0;
+		ui.stackedWidget->hide();
+	}
+	else
+	{
+		ui.scenesetting_pushButton->setStyleSheet(QString::fromUtf8("QPushButton{background-color:rgb(119, 185, 252);\n"
+			"color: white;\n"
+			"/*border-radius:10px;\n"
+			"border: 2px groove gray;*/\n"
+			"border-style: outset;}\n"
+			"QPushButton:hover{background-color:rgb(119, 185, 252);\n"
+			"color: black;}\n"
+			"QPushButton:pressed{background-color:rgb(119, 185, 252);}\n"
+			""));
+		quint8 last_infobuttoncontainer_index = infobuttoncontainer_index;
+		infobuttoncontainer_index = 3;
+		ui.stackedWidget->setCurrentIndex(infobuttoncontainer_index - 1);
+		if (last_infobuttoncontainer_index == 0)
+		{
+			ui.stackedWidget->show();
+		}
+		else
+		{
+
+		}
+	}
 }

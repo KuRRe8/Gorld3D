@@ -7,7 +7,7 @@ You should NOT #include this file directly, #include __Utilities.h instead.
 
 #pragma once
 
-#define G3D_INTERNAL_VERSION "0.03"s //update VER in Progress.ykw, __Definitions.h & exe.rc simultaneously
+#define G3D_INTERNAL_VERSION "0.03" //update VER in Progress.ykw, __Definitions.h & exe.rc simultaneously
 #define Y_CONCATENATE(q,w) q##w
 #define ykw_debug
 #define NO_LOG
@@ -30,4 +30,5 @@ You should NOT #include this file directly, #include __Utilities.h instead.
 	#define LOG_LVL          ELOG_LVL_INFO    //less log
 #endif // NO_LOG|_DEBUG
 
-#define LOG_TAG          logger_tag
+#define MAX_TAG_LENGTH 99
+#define LOG_TAG logger_tag

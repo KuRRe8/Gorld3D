@@ -282,7 +282,23 @@ QPushButton:pressed{background-color:rgba(85, 170, 255,200); border-style: inset
        </layout>
       </item>
       <item>
-       <spacer name="horizontalSpacer_1_1">
+       <widget class="QLabel" name="label_1_3">
+        <property name="statusTip">
+         <string>Chinese Academy of Sciences</string>
+        </property>
+        <property name="layoutDirection">
+         <enum>Qt::LeftToRight</enum>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap>image/cas1.png</pixmap>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_1_4">
         <property name="orientation">
          <enum>Qt::Horizontal</enum>
         </property>
@@ -457,11 +473,21 @@ QPushButton:pressed{background-color:rgba(85, 170, 255,200); border-style: inset
           <height>16777215</height>
          </size>
         </property>
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
         <property name="currentIndex">
          <number>1</number>
         </property>
         <widget class="QWidget" name="page_5"/>
         <widget class="QWidget" name="page_6"/>
+       </widget>
+      </item>
+      <item>
+       <widget class="Line" name="line">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
        </widget>
       </item>
       <item>
@@ -484,6 +510,9 @@ QPushButton:pressed{background-color:rgba(85, 170, 255,200); border-style: inset
           <height>16777215</height>
          </size>
         </property>
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
         <widget class="QPushButton" name="jobinfo_pushButton">
          <property name="geometry">
           <rect>
@@ -499,6 +528,17 @@ QPushButton:pressed{background-color:rgba(85, 170, 255,200); border-style: inset
            <verstretch>0</verstretch>
           </sizepolicy>
          </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton{background-color:rgb(119, 185, 252);
+color: white;
+/*border-radius:10px;
+border: 2px groove gray;*/
+border-style: outset;}
+QPushButton:hover{background-color:rgb(119, 185, 252);
+color: black;}
+QPushButton:pressed{background-color:rgb(119, 185, 252);}
+</string>
+         </property>
          <property name="text">
           <string/>
          </property>
@@ -508,8 +548,8 @@ QPushButton:pressed{background-color:rgba(85, 170, 255,200); border-style: inset
          </property>
          <property name="iconSize">
           <size>
-           <width>61</width>
-           <height>61</height>
+           <width>30</width>
+           <height>30</height>
           </size>
          </property>
         </widget>
@@ -522,6 +562,20 @@ QPushButton:pressed{background-color:rgba(85, 170, 255,200); border-style: inset
            <height>62</height>
           </rect>
          </property>
+         <property name="autoFillBackground">
+          <bool>false</bool>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton{background-color:rgb(240,240,240);
+color: white;
+/*border-radius:10px;
+border: 2px groove gray;*/
+border-style: outset;}
+QPushButton:hover{background-color:rgb(229,241,251);
+color: black;}
+QPushButton:pressed{background-color:rgb(119, 185, 252);}
+</string>
+         </property>
          <property name="text">
           <string/>
          </property>
@@ -531,12 +585,12 @@ QPushButton:pressed{background-color:rgba(85, 170, 255,200); border-style: inset
          </property>
          <property name="iconSize">
           <size>
-           <width>62</width>
-           <height>62</height>
+           <width>30</width>
+           <height>30</height>
           </size>
          </property>
         </widget>
-        <widget class="QPushButton" name="brightness_pushButton">
+        <widget class="QPushButton" name="scenesetting_pushButton">
          <property name="geometry">
           <rect>
            <x>0</x>
@@ -551,6 +605,17 @@ QPushButton:pressed{background-color:rgba(85, 170, 255,200); border-style: inset
            <verstretch>0</verstretch>
           </sizepolicy>
          </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton{background-color:rgb(240,240,240);
+color: white;
+/*border-radius:10px;
+border: 2px groove gray;*/
+border-style: outset;}
+QPushButton:hover{background-color:rgb(229,241,251);
+color: black;}
+QPushButton:pressed{background-color:rgb(119, 185, 252);}
+</string>
+         </property>
          <property name="text">
           <string/>
          </property>
@@ -560,8 +625,8 @@ QPushButton:pressed{background-color:rgba(85, 170, 255,200); border-style: inset
          </property>
          <property name="iconSize">
           <size>
-           <width>62</width>
-           <height>62</height>
+           <width>30</width>
+           <height>30</height>
           </size>
          </property>
         </widget>
@@ -577,7 +642,7 @@ QPushButton:pressed{background-color:rgba(85, 170, 255,200); border-style: inset
      <x>0</x>
      <y>0</y>
      <width>1200</width>
-     <height>30</height>
+     <height>23</height>
     </rect>
    </property>
    <property name="sizePolicy">
@@ -589,7 +654,7 @@ QPushButton:pressed{background-color:rgba(85, 170, 255,200); border-style: inset
    <property name="minimumSize">
     <size>
      <width>255</width>
-     <height>30</height>
+     <height>21</height>
     </size>
    </property>
    <property name="maximumSize">
@@ -604,9 +669,9 @@ QPushButton:pressed{background-color:rgba(85, 170, 255,200); border-style: inset
       <colorrole role="WindowText">
        <brush brushstyle="SolidPattern">
         <color alpha="255">
-         <red>220</red>
-         <green>220</green>
-         <blue>220</blue>
+         <red>5</red>
+         <green>5</green>
+         <blue>5</blue>
         </color>
        </brush>
       </colorrole>
@@ -633,18 +698,18 @@ QPushButton:pressed{background-color:rgba(85, 170, 255,200); border-style: inset
       <colorrole role="Text">
        <brush brushstyle="SolidPattern">
         <color alpha="255">
-         <red>220</red>
-         <green>220</green>
-         <blue>220</blue>
+         <red>5</red>
+         <green>5</green>
+         <blue>5</blue>
         </color>
        </brush>
       </colorrole>
       <colorrole role="ButtonText">
        <brush brushstyle="SolidPattern">
         <color alpha="255">
-         <red>220</red>
-         <green>220</green>
-         <blue>220</blue>
+         <red>5</red>
+         <green>5</green>
+         <blue>5</blue>
         </color>
        </brush>
       </colorrole>
@@ -691,9 +756,9 @@ QPushButton:pressed{background-color:rgba(85, 170, 255,200); border-style: inset
       <colorrole role="PlaceholderText">
        <brush brushstyle="NoBrush">
         <color alpha="128">
-         <red>220</red>
-         <green>220</green>
-         <blue>220</blue>
+         <red>5</red>
+         <green>5</green>
+         <blue>5</blue>
         </color>
        </brush>
       </colorrole>
@@ -702,9 +767,9 @@ QPushButton:pressed{background-color:rgba(85, 170, 255,200); border-style: inset
       <colorrole role="WindowText">
        <brush brushstyle="SolidPattern">
         <color alpha="255">
-         <red>220</red>
-         <green>220</green>
-         <blue>220</blue>
+         <red>5</red>
+         <green>5</green>
+         <blue>5</blue>
         </color>
        </brush>
       </colorrole>
@@ -731,18 +796,18 @@ QPushButton:pressed{background-color:rgba(85, 170, 255,200); border-style: inset
       <colorrole role="Text">
        <brush brushstyle="SolidPattern">
         <color alpha="255">
-         <red>220</red>
-         <green>220</green>
-         <blue>220</blue>
+         <red>5</red>
+         <green>5</green>
+         <blue>5</blue>
         </color>
        </brush>
       </colorrole>
       <colorrole role="ButtonText">
        <brush brushstyle="SolidPattern">
         <color alpha="255">
-         <red>220</red>
-         <green>220</green>
-         <blue>220</blue>
+         <red>5</red>
+         <green>5</green>
+         <blue>5</blue>
         </color>
        </brush>
       </colorrole>
@@ -789,9 +854,9 @@ QPushButton:pressed{background-color:rgba(85, 170, 255,200); border-style: inset
       <colorrole role="PlaceholderText">
        <brush brushstyle="NoBrush">
         <color alpha="128">
-         <red>220</red>
-         <green>220</green>
-         <blue>220</blue>
+         <red>5</red>
+         <green>5</green>
+         <blue>5</blue>
         </color>
        </brush>
       </colorrole>
@@ -800,9 +865,9 @@ QPushButton:pressed{background-color:rgba(85, 170, 255,200); border-style: inset
       <colorrole role="WindowText">
        <brush brushstyle="SolidPattern">
         <color alpha="255">
-         <red>220</red>
-         <green>220</green>
-         <blue>220</blue>
+         <red>5</red>
+         <green>5</green>
+         <blue>5</blue>
         </color>
        </brush>
       </colorrole>
@@ -829,18 +894,18 @@ QPushButton:pressed{background-color:rgba(85, 170, 255,200); border-style: inset
       <colorrole role="Text">
        <brush brushstyle="SolidPattern">
         <color alpha="255">
-         <red>220</red>
-         <green>220</green>
-         <blue>220</blue>
+         <red>5</red>
+         <green>5</green>
+         <blue>5</blue>
         </color>
        </brush>
       </colorrole>
       <colorrole role="ButtonText">
        <brush brushstyle="SolidPattern">
         <color alpha="255">
-         <red>220</red>
-         <green>220</green>
-         <blue>220</blue>
+         <red>5</red>
+         <green>5</green>
+         <blue>5</blue>
         </color>
        </brush>
       </colorrole>
@@ -887,14 +952,19 @@ QPushButton:pressed{background-color:rgba(85, 170, 255,200); border-style: inset
       <colorrole role="PlaceholderText">
        <brush brushstyle="NoBrush">
         <color alpha="128">
-         <red>220</red>
-         <green>220</green>
-         <blue>220</blue>
+         <red>5</red>
+         <green>5</green>
+         <blue>5</blue>
         </color>
        </brush>
       </colorrole>
      </disabled>
     </palette>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>11</pointsize>
+    </font>
    </property>
    <property name="layoutDirection">
     <enum>Qt::LeftToRight</enum>
@@ -902,12 +972,12 @@ QPushButton:pressed{background-color:rgba(85, 170, 255,200); border-style: inset
    <property name="styleSheet">
     <string notr="true">QMenuBar {
 	background-color:qlineargradient(x1:0, y1:0, x2:0, y2:1,stop:0 lightgray, stop:1 darkgray);
-	color:rgb(220,220,220);
+	color:rgb(5,5,5);
 }
 
 QMenuBar::item {
 	/* 条目之间的距离 */
-	spacing:10px;
+	spacing:30px;
 	
 	/* 条目内边框 */
 	padding:1 20px;
@@ -917,15 +987,23 @@ QMenuBar::item {
 	
 	/* 倒角 */
 	border-radius:4px;
-}</string>
+}  
+
+QMenuBar::item:selected { /* when selected using mouse or keyboard */
+      background: #a8a8a8;
+  }
+
+  QMenuBar::item:pressed {
+      background: #888888;
+  }</string>
    </property>
    <widget class="QMenu" name="menuFiles">
     <property name="geometry">
      <rect>
       <x>269</x>
-      <y>124</y>
-      <width>188</width>
-      <height>183</height>
+      <y>133</y>
+      <width>162</width>
+      <height>253</height>
      </rect>
     </property>
     <property name="minimumSize">
@@ -946,28 +1024,28 @@ QMenuBar::item {
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true"> QMenu {
+     <string notr="true">/* QMenu {
 background-color:rgb(200,200,200); /*整个背景*/
 /*border: 3px solid rgb(235,110,36);/*整个菜单边缘*/
-}
+/*}
 QMenu::item{
 font-size: 16pt;
 color: rgb(225,225,225);  /*字体颜色*/
 /*border: 3px solid rgb(60,60,60);    /*item选框*/
-background-color:rgb(180,180,180);
+/*background-color:rgb(180,180,180);
 /*padding:16px 16px; /*设置菜单项文字上下和左右的内边距，效果就是菜单中的条目左右上下有了间隔*/
 /*margin:2px 2px;/*设置菜单项的外边距*/
-}
+/*}
 QMenu::item:selected {
 background-color:rgb(235,110,36);/*选中的样式*/
-}
+/*}
  QMenu::item:pressed {/*菜单项按下效果*/
-border: 1px solid rgb(60,60,61);
+/*border: 1px solid rgb(60,60,61);
  background-color: rgb(220,80,6);
 }</string>
     </property>
     <property name="title">
-     <string>&amp;FILE</string>
+     <string>&amp;File</string>
     </property>
     <addaction name="actionNew_2"/>
     <addaction name="actionOpen"/>
@@ -983,7 +1061,7 @@ border: 1px solid rgb(60,60,61);
    </widget>
    <widget class="QMenu" name="menuEDIT">
     <property name="title">
-     <string>&amp;EDIT</string>
+     <string>&amp;Edit</string>
     </property>
     <addaction name="actionUndo"/>
     <addaction name="actionRedo"/>
@@ -998,7 +1076,7 @@ border: 1px solid rgb(60,60,61);
    </widget>
    <widget class="QMenu" name="menuVIEW">
     <property name="title">
-     <string>&amp;VIEW</string>
+     <string>&amp;View</string>
     </property>
     <addaction name="actionAdapt_All"/>
     <addaction name="actionAdapt_Selection"/>
@@ -1030,8 +1108,13 @@ border: 1px solid rgb(60,60,61);
       <height>16777215</height>
      </size>
     </property>
+    <property name="font">
+     <font>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
     <property name="title">
-     <string>&amp;HELP</string>
+     <string>&amp;Help</string>
     </property>
     <addaction name="actionAbout"/>
     <addaction name="actionManual"/>

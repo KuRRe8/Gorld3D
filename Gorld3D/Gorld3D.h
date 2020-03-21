@@ -29,6 +29,7 @@ private:
 	SettingDlg* settingDlg;
 	TransparentAndTools* transparentandtools;
 	workspaceinfo* workinfotab;
+	quint8 infobuttoncontainer_index; //0: none  1: jobinfo  2: components  3: scenesetting
 	
 signals:
 	;
@@ -38,4 +39,8 @@ private slots:
 	void on_actionAbout_triggered();
 	void on_actionSettings_triggered();
 	void on_actionAdd_Components_triggered();
+	void on_pushButton_1_1_4_settings_released();
+	void on_jobinfo_pushButton_released();
+	void on_components_pushButton_released();
+	void on_scenesetting_pushButton_released();
 };
