@@ -20,7 +20,9 @@ void Gorld3D::UI_Construction()
 	QHBoxLayout* hboxlayout_2_1_1_ = new QHBoxLayout(ui.widget_2_1_3DviewContainer);
 	//stackedlayout_2_1_1_->setStackingMode(QStackedLayout::StackAll);
 	transparentandtools = new TransparentAndTools(hboxlayout_2_1_1_);
-	s3d = new Scene3d(hboxlayout_2_1_1_);
+	//scene3d = new Scene3d(hboxlayout_2_1_1_);
+	sceneGL = new GLWidget(this);
+	hboxlayout_2_1_1_->addWidget(sceneGL);
 	ui.widget_2_1_3DviewContainer->setLayout(hboxlayout_2_1_1_);
 
 	ui.stackedWidget->removeWidget(ui.page_5);
@@ -64,12 +66,12 @@ void Gorld3D::on_actionAdd_Components_triggered()
 
 void Gorld3D::on_actiontest_btn_triggered()
 {
-	s3d->slot_test();
+	//s3d->slot_test();
 }
 
 void Gorld3D::on_pushButton_1_1_4_settings_released()
 {
-	settingDlg->show();
+	//settingDlg->show();
 }
 
 void Gorld3D::on_jobinfo_pushButton_released()

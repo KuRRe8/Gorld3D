@@ -6,6 +6,7 @@ main window of app.
 #include <qsplashscreen.h>
 #include "qstackedlayout.h"
 #include "Scene3d.h"
+#include "SceneGL.h"
 #include "SettingDlg.h"
 #include "qfiledialog.h"
 #include "TransparentAndTools.h"
@@ -25,7 +26,8 @@ private:
 	void UI_Construction();
 	void Retranslate();
 	void Connection_Arrangement();
-	Scene3d* s3d;
+	Scene3d* scene3d;
+	GLWidget* sceneGL;
 	SettingDlg* settingDlg;
 	TransparentAndTools* transparentandtools;
 	workspaceinfo* workinfotab;

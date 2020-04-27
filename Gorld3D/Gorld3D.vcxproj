@@ -39,7 +39,7 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>C:\Qt\Qt5.14.0\5.14.0\msvc2015_64\include;$(IncludePath)</IncludePath>
+    <IncludePath>C:\Program Files %28x86%29\lib3mf\include\Bindings\Cpp;C:\Qt\Qt5.14.0\5.14.0\msvc2015_64\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <IncludePath>C:\Qt\Qt5.14.0\5.14.0\msvc2015_64\include;$(IncludePath)</IncludePath>
@@ -71,6 +71,8 @@
       <SubSystem>Console</SubSystem>
       <OutputFile>$(OutDir)\$(ProjectName).exe</OutputFile>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\Program Files %28x86%29\lib3mf\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>lib3mf.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -87,6 +89,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="3mfLoader.cpp" />
     <ClCompile Include="Scene3d.cpp" />
     <ClCompile Include="3rdparty\elog.cpp" />
     <ClCompile Include="3rdparty\elog_async.cpp" />
@@ -95,6 +98,7 @@
     <ClCompile Include="3rdparty\elog_utils.cpp" />
     <ClCompile Include="Gorld3D.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="SceneGL.cpp" />
     <ClCompile Include="SettingDlg.cpp" />
     <ClCompile Include="Splash.cpp" />
     <ClCompile Include="TransparentAndTools.cpp" />
@@ -116,6 +120,7 @@
     <QtRcc Include="Gorld3D.qrc">
       <SubType>Designer</SubType>
     </QtRcc>
+    <QtRcc Include="textures.qrc" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="Progress.ykw" />
@@ -123,10 +128,14 @@
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="Scene3d.h" />
+    <ClInclude Include="3mfLoader.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClInclude>
     <ClInclude Include="3rdparty\elog.h" />
     <ClInclude Include="3rdparty\elog_cfg.h" />
     <ClInclude Include="resource.h" />
     <QtMoc Include="SettingDlg.h" />
+    <QtMoc Include="SceneGL.h" />
     <ClInclude Include="Splash.h" />
     <ClInclude Include="TransparentAndTools.h" />
     <QtMoc Include="workspaceinfo.h" />

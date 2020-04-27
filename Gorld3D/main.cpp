@@ -23,7 +23,7 @@ UCHAR load_ini()
 
 int APIENTRY main(int argc, char *argv[])
 {
-	signal(SIGSEGV, crtsignalHandler);
+	signal(SIGFPE, crtsignalHandler);
 	int ret_chk;
 	SYSTEMTIME st;
 	GetLocalTime(&st);
@@ -47,15 +47,33 @@ int APIENTRY main(int argc, char *argv[])
 	QApplication protogonus(argc, argv);
 	protogonus.setFont(QFont("simsun", 20));
 
+	QCoreApplication::setApplicationName("Gorld3D");
+	QCoreApplication::setOrganizationName("ZKRZ");
+	QCoreApplication::setApplicationVersion(G3D_INTERNAL_VERSION);
+
+	//QSurfaceFormat fmt;
+	//fmt.setDepthBufferSize(24);
+	//fmt.setSamples(4);
+	//fmt.setVersion(3, 2);
+	//fmt.setProfile(QSurfaceFormat::CoreProfile);
+	//QSurfaceFormat::setDefaultFormat(fmt);
+
 	QPixmap pmp;
 	ret_chk = pmp.load(":/image/splash.png");
 	QSplashScreen splash(pmp);
 	splash.show();
 	QString qs;
 	qs = ("     Gorld3D Print     v0.0.2");
-	
 	splash.showMessage(qs, Qt::AlignLeft | Qt::AlignVCenter | Qt::AlignJustify, Qt::black);
 	protogonus.processEvents();
+
+	//load qrc after splash
+	Q_INIT_RESOURCE(textures);
+	QSurfaceFormat format;
+	format.setDepthBufferSize(24);
+	QSurfaceFormat::setDefaultFormat(format);
+
+
 	QTranslator *translator = new QTranslator();
 	bool loadFlag = translator->load("Gorld3D_zh.qm", ".");
 	if (loadFlag == true) {

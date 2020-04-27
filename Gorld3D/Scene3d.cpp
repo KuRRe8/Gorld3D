@@ -192,11 +192,11 @@ void Scene3d::UI_Construction(QLayout* parent)
 	m_importEntity = new Qt3DCore::QEntity(rootEntity);
 	///m_importMesh = new Qt3DRender::QMesh(m_importEntity);
 
-	//m_importSceneLoader = new Qt3DRender::QSceneLoader(m_importEntity);
-	//QUrl importobjectURL("file:///D:\\0work\\cpp\\3dp_cpp_opengl\\myQt3D\\myQt3D\\nanosuit.obj");
-	//QUrl importobjectURL("file:/D:\\0work\\cpp\\3dp_cpp_opengl\\Gorld3D\\Gorld3D\\Gorld3D\\Squirrel_Sculpt.stl");
+	m_importSceneLoader = new Qt3DRender::QSceneLoader(m_importEntity);
+	QUrl importobjectURL("file:///D:\\0work\\cpp\\3dp_cpp_opengl\\myQt3D\\myQt3D\\nanosuit.obj");
+	//QUrl importobjectURL("file:/D:\\0work\\cpp\\3dp_cpp_opengl\\heartmodel.wrl");
 	//QUrl importobjectURL("file:/D:\\0work\\cpp\\3dp_cpp_opengl\\Gorld3D\\Gorld3D\\Gorld3D\\toyplane.obj");
-	//m_importSceneLoader->setSource(importobjectURL);
+	m_importSceneLoader->setSource(importobjectURL);
 	Qt3DRender::QMesh *meshimport = new Qt3DRender::QMesh();
 	meshimport->setSource(QUrl("file:/D:\\0work\\cpp\\3dp_cpp_opengl\\Gorld3D\\Gorld3D\\Gorld3D\\gear.stl"));
 	//! [1]设置变换component
@@ -215,8 +215,8 @@ void Scene3d::UI_Construction(QLayout* parent)
 	////! [2]
 
 	//! [3]加载各component到根实体（entity/node）
-	//m_importEntity->addComponent(m_importSceneLoader);
-	m_importEntity->addComponent(meshimport);
+	m_importEntity->addComponent(m_importSceneLoader);
+	//m_importEntity->addComponent(meshimport);
 	m_importEntity->addComponent(importMaterial);
 	m_importEntity->addComponent(importTransform);
 	//! [3]

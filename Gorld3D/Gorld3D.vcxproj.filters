@@ -52,6 +52,12 @@
       <Extensions>ts</Extensions>
       <ParseFiles>false</ParseFiles>
     </Filter>
+    <Filter Include="Source Files\business">
+      <UniqueIdentifier>{4731956d-d455-4e4f-b323-4d8392772235}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\business">
+      <UniqueIdentifier>{42c19223-c84b-49a3-8cc1-9a5f55c5119a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -78,9 +84,6 @@
     <ClCompile Include="Splash.cpp">
       <Filter>Source Files\windows</Filter>
     </ClCompile>
-    <ClCompile Include="Scene3d.cpp">
-      <Filter>Source Files\windows</Filter>
-    </ClCompile>
     <ClCompile Include="SettingDlg.cpp">
       <Filter>Source Files\windows</Filter>
     </ClCompile>
@@ -89,6 +92,15 @@
     </ClCompile>
     <ClCompile Include="TransparentAndTools.cpp">
       <Filter>Source Files\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneGL.cpp">
+      <Filter>Source Files\business</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene3d.cpp">
+      <Filter>Source Files\business</Filter>
+    </ClCompile>
+    <ClCompile Include="3mfLoader.cpp">
+      <Filter>Source Files\business</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -104,6 +116,9 @@
   </ItemGroup>
   <ItemGroup>
     <QtRcc Include="Gorld3D.qrc">
+      <Filter>Resource Files</Filter>
+    </QtRcc>
+    <QtRcc Include="textures.qrc">
       <Filter>Resource Files</Filter>
     </QtRcc>
   </ItemGroup>
@@ -140,6 +155,9 @@
     <ClInclude Include="TransparentAndTools.h">
       <Filter>Header Files\windows</Filter>
     </ClInclude>
+    <ClInclude Include="3mfLoader.h">
+      <Filter>Header Files\business</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="exe.rc">
@@ -150,14 +168,17 @@
     <QtMoc Include="Gorld3D.h">
       <Filter>Header Files\windows</Filter>
     </QtMoc>
-    <QtMoc Include="Scene3d.h">
-      <Filter>Header Files\windows</Filter>
-    </QtMoc>
     <QtMoc Include="SettingDlg.h">
       <Filter>Header Files\windows</Filter>
     </QtMoc>
     <QtMoc Include="workspaceinfo.h">
       <Filter>Header Files\windows</Filter>
+    </QtMoc>
+    <QtMoc Include="Scene3d.h">
+      <Filter>Header Files\business</Filter>
+    </QtMoc>
+    <QtMoc Include="SceneGL.h">
+      <Filter>Header Files\business</Filter>
     </QtMoc>
   </ItemGroup>
   <ItemGroup>
