@@ -5,6 +5,8 @@
 #include <QOpenGLVertexArrayObject>
 #include <QOpenGLBuffer>
 #include <QMatrix4x4>
+#include <qopenglframebufferobject.h>
+#include <qtimer.h>
 #include "3mfLoader.h"
 
 
@@ -37,7 +39,10 @@ protected:
 
 private:
 	void makeObject();
+	void renderSlice();
 
+	QTimer* qtimer;
+	float nearplane;
 	QColor clearColor;
 	QPoint lastPos;
 	int xRot;
@@ -49,4 +54,8 @@ private:
 	QOpenGLVertexArrayObject vao;
 	QOpenGLBuffer* ebo;
 	Model3MF* model3mf;
+	QOpenGLFramebufferObject* sliceFbo;
+
+private slots:
+	void updatenearplane();
 };

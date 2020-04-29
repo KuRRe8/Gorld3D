@@ -66,6 +66,8 @@
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -120,7 +122,6 @@
     <QtRcc Include="Gorld3D.qrc">
       <SubType>Designer</SubType>
     </QtRcc>
-    <QtRcc Include="textures.qrc" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="Progress.ykw" />

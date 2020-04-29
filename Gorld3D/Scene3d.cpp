@@ -211,7 +211,7 @@ void Scene3d::UI_Construction(QLayout* parent)
 	//importMaterial->setDiffuse(QColor(qRgba(0.8,0.8,0.8,1))); displayed black object for unknown reason
 	importMaterial->setAmbient(QColor(qRgba(0.6, 0.2, 0.1, 1)));
 	importMaterial->setSpecular(QColor(qRgba(0.2, 0.9, 0.1, 1)));
-	importMaterial->setShininess(0.6);
+	importMaterial->setShininess(0.6f);
 	////! [2]
 
 	//! [3]加载各component到根实体（entity/node）

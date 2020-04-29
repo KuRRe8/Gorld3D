@@ -118,9 +118,6 @@
     <QtRcc Include="Gorld3D.qrc">
       <Filter>Resource Files</Filter>
     </QtRcc>
-    <QtRcc Include="textures.qrc">
-      <Filter>Resource Files</Filter>
-    </QtRcc>
   </ItemGroup>
   <ItemGroup>
     <Text Include="Progress.ykw">

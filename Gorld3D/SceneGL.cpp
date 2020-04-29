@@ -5,21 +5,21 @@
 
 GLWidget::GLWidget(QWidget *parent)
 	: QOpenGLWidget(parent),
-	clearColor(Qt::black),
+	clearColor(Qt::white),
 	xRot(0),
 	yRot(0),
 	zRot(0),
 	program(0)
 {
 	//memset(textures, 0, sizeof(textures));
+	qtimer = new QTimer();
+	connect(qtimer, SIGNAL(timeout()), this, SLOT(updatenearplane()));
 }
 
 GLWidget::~GLWidget()
 {
 	makeCurrent();
 	vbo->destroy();
-	//for (int i = 0; i < 6; ++i)
-		//delete textures[i];
 	delete program;
 	doneCurrent();
 }
@@ -48,100 +48,12 @@ void GLWidget::setClearColor(const QColor &color)
 	update();
 }
 
-void GLWidget::initializeGL()
+void GLWidget::updatenearplane()
 {
-	initializeOpenGLFunctions();
-	//context()->versionFunctions();
-	makeObject();
-
-	glEnable(GL_DEPTH_TEST);
-	glEnable(GL_CULL_FACE);
-#define PROGRAM_VERTEX_ATTRIBUTE 0
-//#define PROGRAM_TEXCOORD_ATTRIBUTE 1
-	//QOpenGLShaderProgram *vs = new QOpenGLShaderProgram();
-	//vs->create();
-	QOpenGLShader *vshader = new QOpenGLShader(QOpenGLShader::Vertex, this);
-	const char *vsrc =
-		"attribute highp vec4 vertex;\n"
-		//"attribute mediump vec4 texCoord;\n"
-		//"varying mediump vec4 texc;\n"
-		"uniform mediump mat4 matrix;\n"
-		"void main(void)\n"
-		"{\n"
-		"    gl_Position = matrix * vertex;\n"
-		//"    texc = texCoord;\n"
-		"}\n";
-		////"#version 330 core\n"
-		////"layout(location = 0) in vec3 vert;\n"
-		//////"uniform mat4 model;"
-		//////"uniform mat4 proj;"
-		////"uniform mediump mat4 matrix;\n"
-		////"void main() {\n"
-		////"gl_Position =matrix*vec4(vert,1.0f);\n"
-		////"}\n";
-
-	vshader->compileSourceCode(vsrc);
-	//vs->addShaderFromSourceCode(QOpenGLShader::Vertex, vsrc);
-	QOpenGLShader *fshader = new QOpenGLShader(QOpenGLShader::Fragment, this);
-	//QOpenGLShaderProgram* fs = new qopengl
-	const char *fsrc =
-		//"uniform sampler2D texture;\n"
-		//"varying mediump vec4 texc;\n"
-		"void main(void)\n"
-		"{\n"
-		"    gl_FragColor = vec4(0.1,0.5,0.1, 1.0); \n"
-		"}\n";
-		//"#version 330 core\n"
-		//"out vec4 FragColor;\n"
-
-		//"void main()\n"
-		//"{\n"
-		//"FragColor = vec4(0.5);\n"
-		//"}\n";
-
-	fshader->compileSourceCode(fsrc);
-
-	program = new QOpenGLShaderProgram;
-	program->addShader(vshader);
-	program->addShader(fshader);
-	program->bindAttributeLocation("vertex", PROGRAM_VERTEX_ATTRIBUTE);
-	//program->bindAttributeLocation("texCoord", PROGRAM_TEXCOORD_ATTRIBUTE);
-	program->link();
-	program->bind();
-	//program->setUniformValue("texture", 0);
+	nearplane += 2.0f;
+	update();
 }
 
-void GLWidget::paintGL()
-{
-	glClearColor(clearColor.redF(), clearColor.greenF(), clearColor.blueF(), clearColor.alphaF());
-	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-	QMatrix4x4 m;
-	m.ortho(-500.5f, +500.5f, +500.5f, -500.5f,-500.0f, 500.0f);
-	//m.translate(-0.1f, -0.1f, -1.0f);
-	m.rotate(xRot / 16.0f, 1.0f, 0.0f, 0.0f);
-	m.rotate(yRot / 16.0f, 0.0f, 1.0f, 0.0f);
-	m.rotate(zRot / 16.0f, 0.0f, 0.0f, 1.0f);
-	program->setUniformValue("matrix", m);
-
-	vao.bind();
-//program->enableAttributeArray(PROGRAM_VERTEX_ATTRIBUTE);
-	//program->enableAttributeArray(PROGRAM_TEXCOORD_ATTRIBUTE);
-	//program->setAttributeBuffer(PROGRAM_VERTEX_ATTRIBUTE, GL_FLOAT, 0, 3, 5 * sizeof(GLfloat));
-	//program->setAttributeBuffer(PROGRAM_TEXCOORD_ATTRIBUTE, GL_FLOAT, 3 * sizeof(GLfloat), 2, 5 * sizeof(GLfloat));
-
-	//for (int i = 0; i < 6; ++i) {
-	//	textures[i]->bind();
-	//glDrawArrays(GL_TRIANGLE_FAN, 0, 3);
-	//}
-	ebo->bind();
-	glDrawElements(GL_TRIANGLES,model3mf->indices.count(), GL_UNSIGNED_INT,(void*)0);
-	for (int i = 0; i < 6; ++i) {
-		//glDrawArrays(GL_TRIANGLES, i * 4, 4);
-	}
-	ebo->release();
-	vao.release();
-
-}
 void GLWidget::resizeGL(int width, int height)
 {
 	int side = qMin(width, height);
@@ -172,81 +84,169 @@ void GLWidget::mouseReleaseEvent(QMouseEvent * /* event */)
 	emit clicked();
 }
 
+void GLWidget::initializeGL()
+{
+	initializeOpenGLFunctions();
+	makeObject();
+
+	glEnable(GL_DEPTH_TEST);
+	glDepthFunc(GL_ALWAYS);
+	glEnable(GL_CULL_FACE);
+
+	QOpenGLShader *vshader = new QOpenGLShader(QOpenGLShader::Vertex, this);
+	const char *vsrc =
+		"attribute highp vec4 vertex;\n"
+		//"attribute mediump vec4 texCoord;\n"
+		//"varying mediump vec4 texc;\n"
+		"attribute mediump vec4 colors;\n"
+		"varying mediump vec4 colorv;\n"
+		"uniform mediump mat4 matrix;\n"
+		"void main(void)\n"
+		"{\n"
+		"    gl_Position = matrix * vertex;\n"
+		"	 colorv = colors;\n"
+		//"    texc = texCoord;\n"
+		"}\n";
+		////"#version 330 core\n"
+		////"layout(location = 0) in vec3 vert;\n"
+		//////"uniform mat4 model;"
+		//////"uniform mat4 proj;"
+		////"uniform mediump mat4 matrix;\n"
+		////"void main() {\n"
+		////"gl_Position =matrix*vec4(vert,1.0f);\n"
+		////"}\n";
+
+	vshader->compileSourceCode(vsrc);
+	QOpenGLShader *fshader = new QOpenGLShader(QOpenGLShader::Fragment, this);
+	const char *fsrc =
+		//"uniform sampler2D texture;\n"
+		//"varying mediump vec4 texc;\n"
+		"varying mediump vec4 colorv;\n"
+		"void main(void)\n"
+		"{\n"
+		//"    gl_FragColor = vec4(0.1,0.6,0.7,1.0); \n"
+		"	 gl_FragColor = colorv;\n"
+		"}\n";
+		//"#version 330 core\n"
+		//"out vec4 FragColor;\n"
+
+		//"void main()\n"
+		//"{\n"
+		//"FragColor = vec4(0.5,0.6,0.7,0.8);\n"
+		//"}\n";
+
+	fshader->compileSourceCode(fsrc);
+
+	program = new QOpenGLShaderProgram;
+	program->addShader(vshader);
+	program->addShader(fshader);
+	program->bindAttributeLocation("vertex", 0);
+	//program->bindAttributeLocation("texCoord", 1);
+	program->bindAttributeLocation("colors", 1);
+	program->link();
+	program->bind();
+	//program->setUniformValue("texture", 0);
+
+	sliceFbo = new QOpenGLFramebufferObject(QSize(800, 600));
+	sliceFbo->setAttachment(QOpenGLFramebufferObject::CombinedDepthStencil);
+
+	nearplane = -50.0f;
+	qtimer->start(100);
+}
+
+
 void GLWidget::makeObject()
 {
-	model3mf = new Model3MF("ttj.3mf");
+	model3mf = new Model3MF("model/colorcube.3mf");
+
 	vao.create();
 	vao.bind();
-	vbo = new QOpenGLBuffer(QOpenGLBuffer::VertexBuffer);
-	vbo->create();
-	vbo->bind();
-	   
-	QVector<float> tempvertices;
-	tempvertices.push_back(0.0f);
-	tempvertices.push_back(40.0f);
-	tempvertices.push_back(40.0f);
-	tempvertices.push_back(40.0f);
-	tempvertices.push_back(40.0f);
-	tempvertices.push_back(40.0f);
-	tempvertices.push_back(0.0f);
-	tempvertices.push_back(80.0f);
-	tempvertices.push_back(40.0f);
 
-	tempvertices.push_back(+1.2f);
-	tempvertices.push_back(-1.2f);
-	tempvertices.push_back(-1.2f);
-	tempvertices.push_back(-1.2f);
-	tempvertices.push_back(-1.2f);
-	tempvertices.push_back(-1.2f);
-	tempvertices.push_back(-1.2f);
-	tempvertices.push_back(+1.2f);
-	tempvertices.push_back(-1.2f);
+		vbo = new QOpenGLBuffer(QOpenGLBuffer::VertexBuffer);
+		vbo->create();
+		vbo->bind();
 
-	QVector<quint32> tempindices;
-	tempindices.push_back(0);
-	tempindices.push_back(1);
-	tempindices.push_back(2);
-	tempindices.push_back(3);
-	tempindices.push_back(4);
-	tempindices.push_back(5);
-	//tempindices.push_back(6);
-	//tempindices.push_back(7);
-	//tempindices.push_back(8);
-	//tempindices.push_back(9);
-	//tempindices.push_back(10);
-	//tempindices.push_back(11);
-	static const int coords[6][4][3] = {
-		{ { +1, -1, -1 },{ -1, -1, -1 },{ -1, +1, -1 },{ +1, +1, -1 } },
-		{ { +1, +1, -1 },{ -1, +1, -1 },{ -1, +1, +1 },{ +1, +1, +1 } },
-		{ { +1, -1, +1 },{ +1, -1, -1 },{ +1, +1, -1 },{ +1, +1, +1 } },
-		{ { -1, -1, -1 },{ -1, -1, +1 },{ -1, +1, +1 },{ -1, +1, -1 } },
-		{ { +1, -1, +1 },{ -1, -1, +1 },{ -1, -1, -1 },{ +1, -1, -1 } },
-		{ { -1, -1, +1 },{ +1, -1, +1 },{ +1, +1, +1 },{ -1, +1, +1 } }
-	};
-
-	QVector<GLfloat> vertData;
-	for (int i = 0; i < 6; ++i) {
-		for (int j = 0; j < 4; ++j) {
-			// vertex position
-			vertData.append(0.2 * coords[i][j][0]);
-			vertData.append(0.2 * coords[i][j][1]);
-			vertData.append(0.2 * coords[i][j][2]);
-		}
-	}
-
-	vbo->setUsagePattern(QOpenGLBuffer::StaticDraw);
-	vbo->allocate(model3mf->vertices.constData(), model3mf->vertices.count() * sizeof(GLfloat));
-//	vbo->allocate(tempvertices.constData(), tempvertices.count() * sizeof(GLfloat));
-
-	glVertexAttribPointer(0,3, GL_FLOAT,GL_FALSE,3*sizeof(GLfloat),0);
-	glEnableVertexAttribArray(0);
-
-	vbo->release();
-	ebo = new QOpenGLBuffer(QOpenGLBuffer::IndexBuffer);
-	ebo->create();
-	ebo->bind();
-	ebo->allocate(model3mf->indices.constData(), model3mf->indices.count() * sizeof(quint32));
-	//ebo->allocate(tempindices.constData(), tempindices.count() * sizeof(quint32));
-	ebo->release();
+		vbo->setUsagePattern(QOpenGLBuffer::StaticDraw);
+		vbo->allocate(model3mf->newvertices.constData(), model3mf->newvertices.count() * 4);
+		glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(GLfloat) + 4 * sizeof(uint), 0);
+		glEnableVertexAttribArray(0);
+		glVertexAttribPointer(1, 4, GL_UNSIGNED_INT, GL_TRUE, 3 * sizeof(GLfloat) + 4 * sizeof(uint), (void*)(3 * sizeof(GLfloat)));
+		glEnableVertexAttribArray(1);
+		vbo->release();
+		ebo = new QOpenGLBuffer(QOpenGLBuffer::IndexBuffer);
+		ebo->create();
+		ebo->bind();
+		ebo->allocate(model3mf->indices.constData(), model3mf->indices.count() * sizeof(quint32));
+		ebo->release();
 	vao.release();
+}
+
+void GLWidget::paintGL()
+{
+	glClearColor(clearColor.redF(), clearColor.greenF(), clearColor.blueF(), clearColor.alphaF());
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);//clear color and depth since depth test enabled. when stencil used,clear the stencilbuffer too
+ 	////glEnable(GL_STENCIL_TEST);
+	glStencilMask(0xFF); //keep intact
+
+	QMatrix4x4 m;
+	m.ortho(model3mf->modelmin,model3mf->modelmax, model3mf->modelmin, model3mf->modelmax, model3mf->modelmin, model3mf->modelmax);
+	m.translate(100.0f, 100.0f, -1*model3mf->zmax);
+	m.rotate(xRot / 16.0f, 1.0f, 0.0f, 0.0f);
+	m.rotate(yRot / 16.0f, 0.0f, 1.0f, 0.0f);
+	m.rotate(zRot / 16.0f, 0.0f, 0.0f, 1.0f);
+	program->setUniformValue("matrix", m);
+
+	vao.bind();
+		ebo->bind();
+
+		////glEnable(GL_CULL_FACE);
+		////glCullFace(GL_FRONT);
+		////glStencilFunc(GL_ALWAYS, 0, 0xff);
+		////glStencilOp(GL_KEEP, GL_KEEP, GL_INCR);
+		////glDrawArrays(GL_TRIANGLES, 0, model3mf->indices.count());
+
+		////glCullFace(GL_BACK);
+		////glStencilOp(GL_KEEP, GL_KEEP, GL_DECR);
+		////glDrawArrays(GL_TRIANGLES, 0, model3mf->indices.count());
+		////glDisable(GL_CULL_FACE);
+		////glClear(GL_COLOR_BUFFER_BIT);
+
+		////glStencilFunc(GL_NOTEQUAL, 0, 0xFF);
+		////glStencilOp(GL_KEEP, GL_KEEP, GL_KEEP);
+		///glDrawElements(GL_TRIANGLES, model3mf->indices.count(), GL_UNSIGNED_INT, (void*)0);
+		glDrawArrays(GL_TRIANGLES, 0, model3mf->indices.count());
+		////glDisable(GL_CULL_FACE);
+		////glDisable(GL_STENCIL_TEST);
+		ebo->release();
+	vao.release();
+}
+
+void GLWidget::renderSlice()
+{
+	//sliceFbo->bind();
+	//glEnable(GL_CULL_FACE);
+	//glCullFace(GL_FRONT);
+	//glStencilFunc(GL_ALWAYS, 0, 0xFF);
+	//glStencilOp(GL_KEEP, GL_KEEP, GL_INCR);
+	//	self.gl.glDrawArrays(self.gl.GL_TRIANGLES, 0, self.numOfVerts)
+
+	//	self.gl.glCullFace(self.gl.GL_BACK)
+	//	self.gl.glStencilOp(self.gl.GL_KEEP, self.gl.GL_KEEP, self.gl.GL_DECR)
+	//	self.gl.glDrawArrays(self.gl.GL_TRIANGLES, 0, self.numOfVerts)
+	//	self.gl.glDisable(self.gl.GL_CULL_FACE)
+
+	//	self.gl.glClear(self.gl.GL_COLOR_BUFFER_BIT)
+	//	self.maskVAO.bind()
+	//	self.gl.glStencilFunc(self.gl.GL_NOTEQUAL, 0, 0xFF)
+	//	self.gl.glStencilOp(self.gl.GL_KEEP, self.gl.GL_KEEP, self.gl.GL_KEEP)
+	//	self.gl.glDrawArrays(self.gl.GL_TRIANGLES, 0, 6)
+	//	self.gl.glDisable(self.gl.GL_STENCIL_TEST)
+
+	//	image = self.sliceFbo.toImage()
+	//	# makes a QComboBox for different Image Format,
+	//	# namely Format_Mono, Format_MonoLSB, and Format_Grayscale8
+	//	image = image.convertToFormat(QtGui.QImage.Format_Grayscale8)
+	//	image.save(os.path.join(self.sliceSavePath,
+	//		'out{:04d}.png'.format(self.currentLayer)))
+	//	self.sliceFbo.release()
 }

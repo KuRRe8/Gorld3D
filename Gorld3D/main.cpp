@@ -23,11 +23,14 @@ UCHAR load_ini()
 
 int APIENTRY main(int argc, char *argv[])
 {
+#pragma region(c runtime)
 	signal(SIGFPE, crtsignalHandler);
 	int ret_chk;
 	SYSTEMTIME st;
 	GetLocalTime(&st);
+#pragma endregion
 
+#pragma region(easy logger)
 	QTextCodec::setCodecForLocale(QTextCodec::codecForName("System"));
 	setbuf(stdout, NULL);
 	/* initialize EasyLogger */
@@ -43,6 +46,7 @@ int APIENTRY main(int argc, char *argv[])
 	elog_start();
 	log_i("app initiating at %4d/%2d/%2d %2d:%2d:%2d.%3d", st.wYear, st.wMonth, st.wDay, st.wHour, st.wMinute, st.wSecond, st.wMilliseconds);
 	QTextCodec::setCodecForLocale(QTextCodec::codecForName("UTF-8"));
+#pragma endregion
 
 	QApplication protogonus(argc, argv);
 	protogonus.setFont(QFont("simsun", 20));
@@ -51,12 +55,6 @@ int APIENTRY main(int argc, char *argv[])
 	QCoreApplication::setOrganizationName("ZKRZ");
 	QCoreApplication::setApplicationVersion(G3D_INTERNAL_VERSION);
 
-	//QSurfaceFormat fmt;
-	//fmt.setDepthBufferSize(24);
-	//fmt.setSamples(4);
-	//fmt.setVersion(3, 2);
-	//fmt.setProfile(QSurfaceFormat::CoreProfile);
-	//QSurfaceFormat::setDefaultFormat(fmt);
 
 	QPixmap pmp;
 	ret_chk = pmp.load(":/image/splash.png");
@@ -67,13 +65,18 @@ int APIENTRY main(int argc, char *argv[])
 	splash.showMessage(qs, Qt::AlignLeft | Qt::AlignVCenter | Qt::AlignJustify, Qt::black);
 	protogonus.processEvents();
 
-	//load qrc after splash
-	Q_INIT_RESOURCE(textures);
+#pragma region(QOpenGL related)
+	///load qrc after splash
+	//Q_INIT_RESOURCE(textures);
+
 	QSurfaceFormat format;
 	format.setDepthBufferSize(24);
+	format.setStencilBufferSize(8);//Stencil Test
 	QSurfaceFormat::setDefaultFormat(format);
 
+#pragma endregion
 
+#pragma region(localization)
 	QTranslator *translator = new QTranslator();
 	bool loadFlag = translator->load("Gorld3D_zh.qm", ".");
 	if (loadFlag == true) {
@@ -101,7 +104,9 @@ int APIENTRY main(int argc, char *argv[])
 	{
 		log_w("install general translation failed ");
 	}
+#pragma endregion
 
+#pragma region(singleton)
 	HANDLE hMutex = CreateMutex(NULL, TRUE, L"Protogonus"); // instance mutex
 	if (hMutex != NULL)
 	{
@@ -112,7 +117,8 @@ int APIENTRY main(int argc, char *argv[])
 			return 1;
 		}
 	}
-	
+#pragma endregion
+
 	//get screen size
 	QScreen *screen = QGuiApplication::primaryScreen();
 	QRect mm = screen->availableGeometry();
